@@ -1,4 +1,4 @@
 baseurl = "http://codecookbook.co/"
 languageCode = "en-us"
 title = "Code Cookbook"
-dest = "docs"
+publishdir = "docs"
