@@ -6,8 +6,22 @@
     <description>Recent content in Posts on Code Cookbook</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 08 Sep 2016 23:22:11 -0400</lastBuildDate>
+    <lastBuildDate>Fri, 09 Sep 2016 18:58:27 -0400</lastBuildDate>
     <atom:link href="http://codecookbook.co/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>How to Share Text from your React Native App</title>
+      <link>http://codecookbook.co/post/how-to-share/</link>
+      <pubDate>Fri, 09 Sep 2016 18:58:27 -0400</pubDate>
+      
+      <guid>http://codecookbook.co/post/how-to-share/</guid>
+      <description>
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/ACryo-rCrQk&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%;&#34; allowfullscreen frameborder=&#34;0&#34;&gt;&lt;/iframe&gt;
+ &lt;/div&gt;
+
+</description>
+    </item>
     
     <item>
       <title>cooking with rxjs</title>
