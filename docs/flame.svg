@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   fill="#000000"
+   height="24"
+   viewBox="0 0 24 24"
+   width="24"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="flame.svg">
+  <metadata
+     id="metadata12">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs10" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1245"
+     inkscape:window-height="752"
+     id="namedview8"
+     showgrid="false"
+     inkscape:zoom="1.2291667"
+     inkscape:cx="52.677966"
+     inkscape:cy="125.89831"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg2" />
+  <g
+     id="g4142">
+    <rect
+       y="-237.38985"
+       x="-114.71186"
+       height="298"
+       width="400"
+       id="rect4140"
+       style="fill:#ffffff;fill-opacity:0.44755243" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path4"
+       d="m 104.03814,-221.70235 c 0,0 9.25,33.125 9.25,60 0,25.75 -16.875001,46.625 -42.625001,46.625 -25.875,0 -45.375,-20.875 -45.375,-46.625 l 0.375,-4.5 c -25.24999966,30 -40.375,68.875003 -40.375,111.125003 0,55.2500002 44.75,100 100,100 55.250001,0 100.000001,-44.7499998 100.000001,-100 0,-67.375003 -32.375,-127.500003 -81.25,-166.625003 z M 81.663139,7.4226532 c -22.25,0 -40.25,-17.5000002 -40.25,-39.2500002 0,-20.25 13.125,-34.5 35.125,-39 22.125,-4.5 45.000001,-15.125 57.750001,-32.250003 4.875,16.125003 7.375,33.125003 7.375,50.500003 0,33.125 -26.875,60.0000002 -60.000001,60.0000002 z" />
+  </g>
+  <path
+     d="M0 0h24v24H0z"
+     fill="none"
+     id="path6" />
+</svg>
