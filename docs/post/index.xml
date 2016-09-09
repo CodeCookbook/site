@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Code Cookbook</title>
-    <link>http://codecookbook.co/</link>
-    <description>Recent content on Code Cookbook</description>
+    <title>Posts on Code Cookbook</title>
+    <link>http://codecookbook.co/post/</link>
+    <description>Recent content in Posts on Code Cookbook</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 08 Sep 2016 23:22:11 -0400</lastBuildDate>
-    <atom:link href="http://codecookbook.co/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://codecookbook.co/post/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>cooking with rxjs</title>
