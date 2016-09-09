@@ -23,7 +23,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -43,14 +43,17 @@
      id="namedview8"
      showgrid="false"
      inkscape:zoom="0.61458333"
-     inkscape:cx="36.40678"
+     inkscape:cx="-221.49153"
      inkscape:cy="134.0339"
      inkscape:window-x="0"
      inkscape:window-y="23"
      inkscape:window-maximized="0"
      inkscape:current-layer="svg2" />
   <g
-     id="g4142">
+     id="g4142"
+     inkscape:export-filename="/Users/mattdupree/Developer/codecookbook/static/img/search"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90">
     <rect
        y="-269.11914"
        x="-130.16949"
