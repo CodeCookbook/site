@@ -15,11 +15,63 @@
       <pubDate>Sun, 11 Sep 2016 01:28:06 -0400</pubDate>
       
       <guid>http://codecookbook.co/post/how-to-make-network-requests-in-react-native/</guid>
-      <description>
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;//www.youtube.com/embed/iZpI-jqvs18&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%;&#34; allowfullscreen frameborder=&#34;0&#34;&gt;&lt;/iframe&gt;
- &lt;/div&gt;
+      <description>&lt;p&gt;Most non-trivial mobile applications require that you make some network
+requests. This video shows you how to do that, and it pays particular attention to how to do that on iOS devices, which can be kind of tricky because of something called &amp;ldquo;App Transport Security.&amp;rdquo; This video is brought to you by code cookbook your source for recipes for building great react native applications.&lt;/p&gt;
 
+&lt;p&gt;Let&amp;rsquo;s go ahead and get started. So you can see here we have an iOS app, and if we scroll down to the jsx, it&amp;rsquo;s rendering this view. We see that we have a touchable highlight, and what we want to do is make it so that when we click this this touchable highlight, we&amp;rsquo;re going to make a network request. So let&amp;rsquo;s go ahead and start doing that now, and we&amp;rsquo;re going to actually get our our data from the hacker news API. So the method that&amp;rsquo;s going to be invoked here when we want to make our network request is going to be called &amp;ldquo;fetch story.&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;So let&amp;rsquo;s go ahead and bind that method in the constructor of this component.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;class NetworkInspector extends Component {
+
+  constructor(props) {
+    super(props);
+    this._fetchStory = this._fetchStory.bind(this);
+  }
+
+  render() {
+    return (
+      &amp;lt;View style={styles.container}&amp;gt;
+        &amp;lt;TouchableHighlight onPress={this._fetchStory}&amp;gt;
+          &amp;lt;Text style={styles.welcome}&amp;gt;
+            Code Cookbook
+          &amp;lt;/Text&amp;gt;
+        &amp;lt;/TouchableHighlight&amp;gt;
+      &amp;lt;/View&amp;gt;
+    );
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now, react native has this global fetch function that we can use to to fetch data from the network so that&amp;rsquo;s what we&amp;rsquo;re going to use here and here&amp;rsquo;s our URL for the hacker news api call we wanna make.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;class NetworkInspector extends Component {
+  //...
+  _fetchStory() {
+    fetch(&#39;https://hacker-news.firebaseio.com/v0/item/8863.json?print=pretty&#39;);
+  }
+  //...
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;So, I&amp;rsquo;m going to have to refresh this and you can see down here that there&amp;rsquo;s actually an error that occurred when we tried to make our network requests, and the reason this happened is because of something called &amp;ldquo;App Transport Security.&amp;rdquo; (henceforth ATS) It&amp;rsquo;s a new requirement iOS 9 that requires all apps by default to use https for their network requests, and this can be problematic if we&amp;rsquo;re using an API that we don&amp;rsquo;t actually have control over whether that API is serving content via https or the particular certificate that&amp;rsquo;s being used and all that and so what I want to show you is how you can actually tweak the app transport security settings so that you can make network requests and kind of keep developing your application.&lt;/p&gt;
+
+&lt;p&gt;So, let&amp;rsquo;s let&amp;rsquo;s go ahead and do that now, and actually before I do that I want to show you something called the network inspector so I just pressed command D on my keyboard here and this opened up the developers menu and then i can click &amp;ldquo;show inspector.&amp;rdquo; There&amp;rsquo;s a network tab this, and this was actually just introduced in version .33. When i click this button I can see detailed information on the particular Network requests that i tried to make.&lt;/p&gt;
+
+&lt;p&gt;You can see actually that the status and the timeout response we have are undefined and this is actually good evidence that your network request is failing because of ATS so let&amp;rsquo;s let&amp;rsquo;s go ahead and fix this now, so i&amp;rsquo;m gonna go ahead and just open up the xcode project for our app.&lt;/p&gt;
+
+&lt;p&gt;When we do we&amp;rsquo;re brought to the info.plist. That&amp;rsquo;s where you want to be, and there&amp;rsquo;s this key here called a &amp;ldquo;transport security settings&amp;rdquo; and then there&amp;rsquo;s an exception domains dictionary and we want to add a dictionary for the hacker views API so that we can kind of tweaked ATS&amp;rsquo;s settings for specifically the hacker news URL or domain so let&amp;rsquo;s go ahead and do that.&lt;/p&gt;
+
+&lt;p&gt;So, the name of the dictionary will actually be the domain name and we&amp;rsquo;ll make this dictionary. You&amp;rsquo;ll notice here that there&amp;rsquo;s this localhost exception here and this is required because of the way that react native actually communicates with the iOS devices. Its kind of how they do hot reloading so there&amp;rsquo;s this key here where they they kind of tweaked ATSs settings.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;m not going to get into the details here, but I&amp;rsquo;m just going to copy that key so that it&amp;rsquo;s underneath this dictionary that I just created here. In this particular case I actually need to add another key to tweak ATS and this key has to do with forward secrecy and I don&amp;rsquo;t want that to be required in order for my network request to be successful, so I&amp;rsquo;m going to go ahead and set NO as the value there so with these two things in place i should be able to make a network request.&lt;/p&gt;
+
+&lt;p&gt;Now, because I&amp;rsquo;ve actually made this change in xcode, or, in other words, I made the change outside of JavaScript I&amp;rsquo;m actually going to need to recompile the application to make sure that these changes take effect, so let&amp;rsquo;s do that now. Let&amp;rsquo;s close xcode. Then I&amp;rsquo;m just going to run &lt;code&gt;run-ios&lt;/code&gt; from the react native command line. It looks like that&amp;rsquo;s done.&lt;/p&gt;
+
+&lt;p&gt;So let&amp;rsquo;s go ahead and click and now we see that the network request has actually gone through, but actually here you can see that there&amp;rsquo;s a 404. There&amp;rsquo;s an error here, and the reason this actually happened is because we have a typo here. We&amp;rsquo;re missing an &amp;ldquo;n&amp;rdquo; in the URL. Once I have that there and refresh and tap this button and then look at things in the inspector, I can see that the status code is actually two hundred and I can actually see the payload that I&amp;rsquo;m getting as a result of making the network requests.&lt;/p&gt;
+
+&lt;p&gt;So the network inspector is actually really handy for debugging what goes wrong with your network requests, and I definitely recommend it over logging or even putting in jsx-like text elements to kind of see what you&amp;rsquo;re getting back from the network.&lt;/p&gt;
+
+&lt;p&gt;Well, that&amp;rsquo;s it. That&amp;rsquo;s how to make a basic network requests in react native. Again, this video is brought to you by code cookbook. Be sure to check back soon to see new recipes for building great react native applications.&lt;/p&gt;
 </description>
     </item>
     

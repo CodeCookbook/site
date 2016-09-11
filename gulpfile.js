@@ -58,6 +58,10 @@ gulp.task('copy', function() {
     gulp.src(['node_modules/jquery/dist/jquery.js', 'node_modules/jquery/dist/jquery.min.js'])
         .pipe(gulp.dest('static/vendor/jquery'))
 
+    gulp.src(['node_modules/prismjs/prism.js',
+    'node_modules/prismjs/themes/*.css'])
+        .pipe(gulp.dest('static/vendor/prism'))
+
     gulp.src([
             'node_modules/font-awesome/**',
             '!node_modules/font-awesome/**/*.map',

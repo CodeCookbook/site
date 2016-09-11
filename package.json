@@ -9,7 +9,7 @@
     "url": "https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE"
   },
   "scripts": {
-    "start": "gulp"    
+    "start": "gulp"
   },
   "devDependencies": {
     "bootstrap": "^3.3.7",
@@ -27,5 +27,8 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/BlackrockDigital/startbootstrap-agency.git"
+  },
+  "dependencies": {
+    "prismjs": "^1.5.1"
   }
 }
