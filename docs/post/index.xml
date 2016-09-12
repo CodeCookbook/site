@@ -15,7 +15,112 @@
       <pubDate>Mon, 12 Sep 2016 01:04:07 -0400</pubDate>
       
       <guid>http://codecookbook.co/post/how-to-build-a-react-native-login-form-with-redux-pt1/</guid>
-      <description></description>
+      <description>
+
+&lt;h2 id=&#34;introduction:287ac7e57179b39589a237849432314e&#34;&gt;Introduction&lt;/h2&gt;
+
+&lt;p&gt;Most mobile applications require that the user login to access some kind of functionality. This video shows you how to build a react native login form with Redux. Actually, that&amp;rsquo;s a lie. This is a video series and by the end of the series you&amp;rsquo;ll have this login form with redux but this first video is just kind of the very basics of getting going with redux to build a login form.&lt;/p&gt;
+
+&lt;p&gt;Now, by the time the video series is over you&amp;rsquo;ll have this login form you can type in the username and password and click this button. When you click this button, you will see this activity indicator that kind of simulates the network request and then you&amp;rsquo;re brought right back here assuming the &amp;ldquo;network request&amp;rdquo; completes successfully. Also notice that i can change the orientation of the application and everything works fine. That&amp;rsquo;s kind of what the finished products that looks like.&lt;/p&gt;
+
+&lt;h2 id=&#34;defining-state-1-05:287ac7e57179b39589a237849432314e&#34;&gt;Defining State (1:05)&lt;/h2&gt;
+
+&lt;p&gt;Let&amp;rsquo;s get started. Here&amp;rsquo;s the app before anything works. You can see this button doesn&amp;rsquo;t do anything. So let&amp;rsquo;s let&amp;rsquo;s go ahead and look at what we have here.&lt;/p&gt;
+
+&lt;p&gt;When we&amp;rsquo;re working with redux one of the most helpful things we can do in the beginning is just think about the state that represents our application and&lt;/p&gt;
+
+&lt;p&gt;we&amp;rsquo;re going to go ahead and define this state in the constructor so for us we have the user name of the user is typing in the field and we also have password. Now, in this case since we have that little activity indicator spinning thing, we&amp;rsquo;re actually gonna need some UI state that tells us whether there is a currently pending login request so let&amp;rsquo;s go ahead and add a property to our state object called &amp;ldquo;pendingLogingRequest,&amp;rdquo; and this just kind of a first approximation of the state that we&amp;rsquo;re going to need.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;class LoginWithRedux extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      username: &#39;&#39;,
+      password: &#39;&#39;,
+      pendingLoginRequest: false
+    };
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;defining-actions-2-12:287ac7e57179b39589a237849432314e&#34;&gt;Defining Actions (2:12)&lt;/h2&gt;
+
+&lt;p&gt;The next thing that&amp;rsquo;s helpful to do when working with redux is to think about the actions that can actually change the state of our screen. There&amp;rsquo;s several actions in our case. There&amp;rsquo;s the action of the user typing in their username field. There&amp;rsquo;s another action of them typing in the password field. And there&amp;rsquo;s another action of actually clicking this this login button here, but we&amp;rsquo;re only actually going to write down just one of these actions just that we can kind of get started with using redux here.&lt;/p&gt;
+
+&lt;p&gt;The action that I want to be interested in is the type username action so I&amp;rsquo;m going to create that action and then i&amp;rsquo;m going to go ahead and create the action creator for that action and we&amp;rsquo;ll call that &lt;code&gt;typeUsername&lt;/code&gt; and this action Creator is going to take the text that the user is typing and return an action that represents the user typing. This action is going to have a type property, which is simply the action type we&amp;rsquo;ve just defined. It is also going to have a text property which is the text of the users typing.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;const TYPE_USERNAME = &#39;TYPE_USERNAME&#39;;
+const typeUsername = (text) =&amp;gt; ({
+  type: TYPE_USERNAME,
+  text
+});
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;the-store-3-29:287ac7e57179b39589a237849432314e&#34;&gt;The Store (3:29)&lt;/h2&gt;
+
+&lt;p&gt;So we have our state and we have our action. The next thing that we need is our reducer and the reducer is something that&amp;rsquo;s actually passed into redux&amp;rsquo;s &lt;code&gt;createStore&lt;/code&gt; function so let&amp;rsquo;s go ahead and grab redux. We&amp;rsquo;re also going to need to grab the react bindings for redux.&lt;/p&gt;
+
+&lt;p&gt;Now that we have this installed we can go ahead and import the &lt;code&gt;createStore&lt;/code&gt; function from redux and so let&amp;rsquo;s start with that. We&amp;rsquo;re gonna go ahead and create our store in this component constructor, and we&amp;rsquo;re going to pass in a reducer and our initial state. The reducer takes the previous state and the action that&amp;rsquo;s been dispatched and so when the user types in to this field here, what we want to do is we want to basically return new state that just incorporates the text that they&amp;rsquo;ve typed in here so let&amp;rsquo;s do that and we&amp;rsquo;re not going to worry about any other actions right now. We&amp;rsquo;re just going to return a new object that spreads over state and changes the username property to the text that the user is typing.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;this.store = createStore((state, action) =&amp;gt; {      
+  return {...state, username: action.text}
+}, this.state);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;defining-a-container-component-5-09:287ac7e57179b39589a237849432314e&#34;&gt;Defining a Container Component (5:09)&lt;/h2&gt;
+
+&lt;p&gt;Now in order to actually make sure that our redux and our actions are working properly we need to wire this up to our react application. The way that we do that is with the react redux bindings. So, we&amp;rsquo;re going to need the &lt;code&gt;connect&lt;/code&gt; function and we&amp;rsquo;re also going to need the component called a &amp;ldquo;Provider,&amp;rdquo; and I&amp;rsquo;ll explain what these are in just a moment.&lt;/p&gt;
+
+&lt;p&gt;So this connect function returns a function that when given a react component will return a container component. Now, container components are actually intermediaries between primitive react native components and your redux store.&lt;/p&gt;
+
+&lt;p&gt;They do two things. One they take new state updates from the redux store and they map that state to the properties of a contained component and in this case, the contained component that we&amp;rsquo;re interested in is a &lt;code&gt;TextInput&lt;/code&gt;. We want this to be contained in a container component, so that it&amp;rsquo;s smart about basically updates that are coming from the Redux store.&lt;/p&gt;
+
+&lt;p&gt;In order for this container component to act as an intermediary and we need to give it a function. Let&amp;rsquo;s actually give a name for this container component. We&amp;rsquo;ll call it &lt;code&gt;LoginFormTextInput&lt;/code&gt; and the first parameter of the connect function is actually a function that maps from the state object that we define down here to the properties on the contained component that we want to update as a result of changes in the state.&lt;/p&gt;
+
+&lt;p&gt;So, this function takes a state and it returns an object that&amp;rsquo;s used to set the properties on the contained &lt;code&gt;TextInput&lt;/code&gt;. So what we want this to return is this value property here on this object and this value is going to be set to value prop on the &lt;code&gt;TextInput&lt;/code&gt; that&amp;rsquo;s contained inside of this &lt;code&gt;LoginFormTextInput&lt;/code&gt; container component.&lt;/p&gt;
+
+&lt;p&gt;The next thing that we need this is the second parameter of the &lt;code&gt;connect&lt;/code&gt; function is a
+function that maps from the event props on the contained component to a function that will dispatch our actions that were interested in. In this case we&amp;rsquo;re interested in the &lt;code&gt;onChangeText&lt;/code&gt; event prop on the text input component.&lt;/p&gt;
+
+&lt;p&gt;What we want to do is we want to take the text that&amp;rsquo;s being changed and we want to use that text to dispatch the type username action using this action creator that we just created a few minutes ago.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;const LoginFormTextInput = connect((state) =&amp;gt; ({
+  value: state.username
+}), (dispatch) =&amp;gt; ({
+  onChangeText: (text) =&amp;gt; {
+    dispatch(typeUsername(text));
+  }
+}))(TextInput);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;providing-the-store-to-our-container-component-8-43:287ac7e57179b39589a237849432314e&#34;&gt;Providing the Store to our Container Component (8:43)&lt;/h2&gt;
+
+&lt;p&gt;Now, what we have is this container component that&amp;rsquo;s wired up with our index store and the way that we expose this to work to this container is by using the &lt;code&gt;Provider&lt;/code&gt; component that we imported from the react redux bindings.&lt;/p&gt;
+
+&lt;p&gt;This provider component exposes the store to all of its children and so we&amp;rsquo;ll go ahead and give it the store that we&amp;rsquo;ve created in constructor as a prop. Next, we can actually replace this &lt;code&gt;TextInput&lt;/code&gt; with a &lt;code&gt;LoginFormTextInput&lt;/code&gt; and let&amp;rsquo;s see what happens.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;&amp;lt;Provider store={this.store}&amp;gt;
+  &amp;lt;View style={styles.container}&amp;gt;
+  &amp;lt;LoginFormTextInput style={styles.textInput} placeholder=&amp;quot;Username&amp;quot;/&amp;gt;
+  &amp;lt;TextInput style={styles.textInput} placeholder=&amp;quot;Password&amp;quot;/&amp;gt;
+  &amp;lt;TouchableHighlight style={{padding: 15, backgroundColor: &#39;#fed136&#39;}}&amp;gt;
+    &amp;lt;Text style={styles.welcome}&amp;gt;
+      Get Cookin&#39;
+    &amp;lt;/Text&amp;gt;
+  &amp;lt;/TouchableHighlight&amp;gt;
+  &amp;lt;/View&amp;gt;
+&amp;lt;/Provider&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;testing-that-it-works-9-40:287ac7e57179b39589a237849432314e&#34;&gt;Testing that it works (9:40)&lt;/h2&gt;
+
+&lt;p&gt;When I type in here let&amp;rsquo;s actually make sure that the state is being updated properly. The easiest way to do that right now anyway is just to log ,it so let&amp;rsquo;s go ahead and let&amp;rsquo;s log our action.&lt;/p&gt;
+
+&lt;p&gt;So we see that we&amp;rsquo;re actually getting actions dispatched to our reducer, and that these actions contain the right data.&lt;/p&gt;
+
+&lt;p&gt;Som there you have it you have kind of the very basics of getting started with redux in your react native application. Check back soon for the next part in this video series that you can have the entire working login form in your app.&lt;/p&gt;
+</description>
     </item>
     
     <item>
