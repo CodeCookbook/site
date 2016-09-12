@@ -129,7 +129,11 @@ function that maps from the event props on the contained component to a function
       <pubDate>Sun, 11 Sep 2016 01:28:06 -0400</pubDate>
       
       <guid>http://codecookbook.co/post/how-to-make-network-requests-in-react-native/</guid>
-      <description>&lt;p&gt;Most non-trivial mobile applications require that you make some network
+      <description>
+
+&lt;h2 id=&#34;introduction:fed7aec0e8d48d1d0c4a3342352ee821&#34;&gt;Introduction&lt;/h2&gt;
+
+&lt;p&gt;Most non-trivial mobile applications require that you make some network
 requests. This video shows you how to do that, and it pays particular attention to how to do that on iOS devices, which can be kind of tricky because of something called &amp;ldquo;App Transport Security.&amp;rdquo; This video is brought to you by code cookbook your source for recipes for building great react native applications.&lt;/p&gt;
 
 &lt;p&gt;Let&amp;rsquo;s go ahead and get started. So you can see here we have an iOS app, and if we scroll down to the jsx, it&amp;rsquo;s rendering this view. We see that we have a touchable highlight, and what we want to do is make it so that when we click this this touchable highlight, we&amp;rsquo;re going to make a network request. So let&amp;rsquo;s go ahead and start doing that now, and we&amp;rsquo;re going to actually get our our data from the hacker news API. So the method that&amp;rsquo;s going to be invoked here when we want to make our network request is going to be called &amp;ldquo;fetch story.&amp;rdquo;&lt;/p&gt;
@@ -157,6 +161,8 @@ requests. This video shows you how to do that, and it pays particular attention 
 }
 &lt;/code&gt;&lt;/pre&gt;
 
+&lt;h2 id=&#34;the-fetch-function-1-27:fed7aec0e8d48d1d0c4a3342352ee821&#34;&gt;The Fetch function (1:27)&lt;/h2&gt;
+
 &lt;p&gt;Now, react native has this global fetch function that we can use to to fetch data from the network so that&amp;rsquo;s what we&amp;rsquo;re going to use here and here&amp;rsquo;s our URL for the hacker news api call we wanna make.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;class NetworkInspector extends Component {
@@ -167,17 +173,23 @@ requests. This video shows you how to do that, and it pays particular attention 
   //...
 &lt;/code&gt;&lt;/pre&gt;
 
+&lt;h2 id=&#34;the-ats-network-error-and-the-network-inspector-1-46:fed7aec0e8d48d1d0c4a3342352ee821&#34;&gt;The ATS Network Error and the Network Inspector (1:46)&lt;/h2&gt;
+
 &lt;p&gt;So, I&amp;rsquo;m going to have to refresh this and you can see down here that there&amp;rsquo;s actually an error that occurred when we tried to make our network requests, and the reason this happened is because of something called &amp;ldquo;App Transport Security.&amp;rdquo; (henceforth ATS) It&amp;rsquo;s a new requirement iOS 9 that requires all apps by default to use https for their network requests, and this can be problematic if we&amp;rsquo;re using an API that we don&amp;rsquo;t actually have control over whether that API is serving content via https or the particular certificate that&amp;rsquo;s being used and all that and so what I want to show you is how you can actually tweak the app transport security settings so that you can make network requests and kind of keep developing your application.&lt;/p&gt;
 
 &lt;p&gt;So, let&amp;rsquo;s let&amp;rsquo;s go ahead and do that now, and actually before I do that I want to show you something called the network inspector so I just pressed command D on my keyboard here and this opened up the developers menu and then i can click &amp;ldquo;show inspector.&amp;rdquo; There&amp;rsquo;s a network tab this, and this was actually just introduced in version .33. When i click this button I can see detailed information on the particular Network requests that i tried to make.&lt;/p&gt;
 
-&lt;p&gt;You can see actually that the status and the timeout response we have are undefined and this is actually good evidence that your network request is failing because of ATS so let&amp;rsquo;s let&amp;rsquo;s go ahead and fix this now, so i&amp;rsquo;m gonna go ahead and just open up the xcode project for our app.&lt;/p&gt;
+&lt;p&gt;You can see actually that the status and the timeout response we have are undefined and this is actually good evidence that your network request is failing because of ATS so let&amp;rsquo;s let&amp;rsquo;s go ahead and fix this now.&lt;/p&gt;
 
-&lt;p&gt;When we do we&amp;rsquo;re brought to the info.plist. That&amp;rsquo;s where you want to be, and there&amp;rsquo;s this key here called a &amp;ldquo;transport security settings&amp;rdquo; and then there&amp;rsquo;s an exception domains dictionary and we want to add a dictionary for the hacker views API so that we can kind of tweaked ATS&amp;rsquo;s settings for specifically the hacker news URL or domain so let&amp;rsquo;s go ahead and do that.&lt;/p&gt;
+&lt;h2 id=&#34;fixing-network-request-failures-3-12:fed7aec0e8d48d1d0c4a3342352ee821&#34;&gt;Fixing Network Request Failures (3:12)&lt;/h2&gt;
+
+&lt;p&gt;So I&amp;rsquo;m gonna go ahead and just open up the xcode project for our app. When we do we&amp;rsquo;re brought to the info.plist. That&amp;rsquo;s where you want to be, and there&amp;rsquo;s this key here called a &amp;ldquo;transport security settings&amp;rdquo; and then there&amp;rsquo;s an exception domains dictionary and we want to add a dictionary for the hacker views API so that we can kind of tweaked ATS&amp;rsquo;s settings for specifically the hacker news URL or domain so let&amp;rsquo;s go ahead and do that.&lt;/p&gt;
 
 &lt;p&gt;So, the name of the dictionary will actually be the domain name and we&amp;rsquo;ll make this dictionary. You&amp;rsquo;ll notice here that there&amp;rsquo;s this localhost exception here and this is required because of the way that react native actually communicates with the iOS devices. Its kind of how they do hot reloading so there&amp;rsquo;s this key here where they they kind of tweaked ATSs settings.&lt;/p&gt;
 
 &lt;p&gt;I&amp;rsquo;m not going to get into the details here, but I&amp;rsquo;m just going to copy that key so that it&amp;rsquo;s underneath this dictionary that I just created here. In this particular case I actually need to add another key to tweak ATS and this key has to do with forward secrecy and I don&amp;rsquo;t want that to be required in order for my network request to be successful, so I&amp;rsquo;m going to go ahead and set NO as the value there so with these two things in place i should be able to make a network request.&lt;/p&gt;
+
+&lt;h2 id=&#34;testing-that-our-fix-worked-5-35:fed7aec0e8d48d1d0c4a3342352ee821&#34;&gt;Testing that our fix worked (5:35)&lt;/h2&gt;
 
 &lt;p&gt;Now, because I&amp;rsquo;ve actually made this change in xcode, or, in other words, I made the change outside of JavaScript I&amp;rsquo;m actually going to need to recompile the application to make sure that these changes take effect, so let&amp;rsquo;s do that now. Let&amp;rsquo;s close xcode. Then I&amp;rsquo;m just going to run &lt;code&gt;run-ios&lt;/code&gt; from the react native command line. It looks like that&amp;rsquo;s done.&lt;/p&gt;
 
