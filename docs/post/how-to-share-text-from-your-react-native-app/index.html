@@ -41,8 +41,96 @@
       <h1>How to Share Text from your React Native App</h1>
       <h2>Sometimes you want your react native app to be able to share its own data with external applications like the email app or the Facebook app. This 8 minute recipe shows you how to do this.</h2>
       
+      <h3>Github Link: <a href="https://github.com/CodeCookbook/ShareText">https://github.com/CodeCookbook/ShareText</a></h3>
+      
       <div class="container lead">
         
+
+<h2 id="introduction:6e0d15726fad3e9897ecfbfbfa17ddbc">Introduction</h2>
+
+<p>Sometimes when you&rsquo;re building a mobile application you want to be able to share data from the application to an external application like an email app or maybe Facebook Twitter.</p>
+
+<p>This recipe shows you how to do this this recipe is from code cookbook your source for short video recipes on how to build great react native applications. Let&rsquo;s go ahead and get started.</p>
+
+<p>So, you can see here that we have a simple react native application. This is actually generated from the <code>init</code> command from the reactive command-line interface, and all were doing here right now is showing this code cookbook text so let&rsquo;s actually change this to a more appropriate text so we want to share.</p>
+
+<h2 id="simple-sharing-1-00:6e0d15726fad3e9897ecfbfbfa17ddbc">Simple Sharing (1:00)</h2>
+
+<p>Now, when we click this button, we actually want to be able to share something to the mail application, and so let&rsquo;s go ahead and import <code>Share</code> from react-native. We&rsquo;re going to go ahead and add a method that will be called that will actually work with this share here from the reactive module so let&rsquo;s let&rsquo;s go ahead and do that now so we have this share message and we actually need to go ahead and define this in our component let&rsquo;s do that. Now, we can go ahead and define method now so we have this share message method and like we said we want to actually do share some data when we invoke this method and so the API for for the share module is just this share method and then we can pass it an object with a message property that holds the information that we want to share.</p>
+
+<p>So, we can say &ldquo;This is a simple shared message.&rdquo; The share method actually returns promise, so we&rsquo;re going to go ahead and pass a method that will handle the result of the promise and we&rsquo;ll call this &ldquo;showResult,&rdquo; so we need to go ahead and create a method for that and this method will go ahead and set some state which we&rsquo;ll &ldquo;result&rdquo;</p>
+
+<p>We need to go ahead and initialize this state here in the constructor. And now we should have a really simple working share example. Let&rsquo;s go ahead and add a simple text component here that will display a result of calling share. We&rsquo;re going to go ahead and do just going to stringify the result.</p>
+
+<p>Let&rsquo;s go ahead and refresh this, and you see if we can get something working so i&rsquo;m gonna go ahead and cancel here just to make sure that everything&rsquo;s working, and you can see that the result promise created this action and it just tells us that we&rsquo;ve kind of dismissed that the share action sheet that we didn&rsquo;t actually do anything. However, if we click this again and we go to the mail application is up you&rsquo;ll see that the mail the email here is populated with the content from this message property, so we know that that&rsquo;s working properly and we can actually go ahead and send this.</p>
+
+<p>When it&rsquo;s actually sent you can see that that the object that gets kind of resolved by the promises little different it has the action of shared action here and then it tells us the type of the activity that actually that we actually shared the message to. So, this is how we do kind of really simple sharing of data to external applications.</p>
+
+<pre><code class="language-javascript">class ShareLesson extends Component {
+
+  constructor(props) {
+    super(props);
+    this._shareMessage = this._shareMessage.bind(this);
+    this._showResult = this._showResult.bind(this);
+    this.state = { result: ''};
+  }
+
+  _showResult(result) {
+    this.setState({result});
+  }
+
+  _shareMessage() {
+    Share.share({
+      message: 'This is a simple shared message'
+    }).then(this._showResult);
+  }
+
+  render() {
+      return (
+        &lt;View style={styles.container}&gt;
+          &lt;TouchableHighlight onPress={this._shareMessage}&gt;
+                  &lt;Text style={styles.welcome}&gt;
+                    Share
+                  &lt;/Text&gt;
+          &lt;/TouchableHighlight&gt;
+          &lt;Text&gt;
+            {JSON.stringify(this.state.result)}
+          &lt;/Text&gt;
+        &lt;View&gt;);
+  }
+}
+</code></pre>
+
+<h2 id="fancy-sharing-5-05:6e0d15726fad3e9897ecfbfbfa17ddbc">Fancy Sharing (5:05)</h2>
+
+<p>However, you can actually get a little bit more fancy when we do this and so let&rsquo;s let&rsquo;s go ahead and show what that looks like. There are more options that we have when we&rsquo;re sharing sharing data to other applications, and so let&rsquo;s let&rsquo;s explore those. So now we have this fancy share and we&rsquo;re going to have a separate method. This one&rsquo;s gonna be called &ldquo;fancyShareMessage,&rdquo; and we&rsquo;re gonna have to go up here.</p>
+
+<p>So, now this time when we call share we&rsquo;re actually going to pass in we&rsquo;re actually going to pass in not only a message but also a URL. Again, this is a promise so we need to pass in a function that will be called when the promise gets resolved. Let&rsquo;s go to refresh this and we open up the mail application this time, you&rsquo;ll notice that there&rsquo;s a message and a URL that populates the email. So, that&rsquo;s that&rsquo;s one way that we can get a little bit fancy here with our with our share.</p>
+
+<p>Now, if you look at the example in the UI explore react native there&rsquo;s actually a title property that they they use in the example, but in my experience that doesn&rsquo;t really seem to do anything it might just be that i&rsquo;m not opening the right application to share data to.</p>
+
+<p>However, there is another parameter that this takes and these are options that customize the look of the dialogue action sheet that appears when you try and share something so. For example, I can specify a tint color property. When I refresh this and click fancy share you&rsquo;ll notice that this cancel button here is green, so I said that the tint color here and I&rsquo;ve kind of customize the appearance of this.</p>
+
+<p>Now again there&rsquo;s another property that&rsquo;s set here in the in the example application from the Explorer UI and that property is dialogue title, and again this doesn&rsquo;t seem to matter much, so i don&rsquo;t really worry about it.</p>
+
+<pre><code class="language-javascript">_fancyShareMessage() {
+  Share.share({
+    // title: ''
+    message: 'This is a fancy shared message',
+    url: 'http://codecookbook.co'
+  }, {
+    tintColor: 'green',
+    // dialogTitle: 'This doesnt matter much'
+  }).then(this._showResult);
+}
+</code></pre>
+
+<h2 id="conclusion-8-02:6e0d15726fad3e9897ecfbfbfa17ddbc">Conclusion (8:02)</h2>
+
+<p>So now you&rsquo;ve just seen how you can share data external to react native application. You&rsquo;ve seen kind of a basic share case and a share case that has a little bit more options.</p>
+
+<p>Well that&rsquo;s it i hope you enjoyed this recipe from the cookbook be sure to check back soon for a new recipe.</p>
+
       </div>
     </div>
     <section id="contact">
