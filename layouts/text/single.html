@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
+    <link href="/css/agency.min.css" rel="stylesheet">
+    <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+    #mc_embed_signup{clear:left; font:14px Helvetica,Arial,sans-serif; width:100%;}
+
+    blockquote {
+      color: #555;
+      font-style: italic;
+    }
+
+    body {
+      font-family: 'Roboto';
+      padding-top: 5vh;
+    }
+    img.pan {
+      float: left;
+      padding-right: 10px;
+      width: 50vw;
+      shape-outside: url('/img/code-cookbook.svg');
+    }
+    h1, h2, h3 {
+      max-width: calc(100vw - (.75em + 2vw));
+    }
+    h1, h2, h3, p {
+      position: relative;
+      left: calc(.5em + 2vw);
+    }
+    p {
+      font-size: 1.25em;
+      line-height: 1.5em;
+      max-width: 70vw;
+      margin-bottom: 1.8em;     
+    }
+    @media (max-width: 768px) {
+      p {
+        max-width: calc(100vw - (.75em + 2vw));
+      }
+    }
+
+    .section-heading > a {
+      color: white;
+    }
+
+    </style>
+    <title>{{.Title}}</title>
+  </head>
+  <body>
+    <img class="pan" src="/img/code-cookbook.svg"/>
+    <div>
+      <h1>{{.Title}}</h1>
+      {{.Content}}
+    </div>
+    <section id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading"><a href="http://codecookbook.co">Code Cookbook</a></h2>
+                    <h3 class="section-subheading text-muted">Recipes for building great React Native Apps delivered on the regular</h3>
+                </div>
+            </div>
+            <!-- Begin MailChimp Signup Form -->
+            <div id="mc_embed_signup">
+              <form action="//universityandroid.us11.list-manage.com/subscribe/post?u=9612e1a3261cb5689813bf38b&amp;id=0b23dfca54" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+              <div id="mc_embed_signup_scroll">
+
+              <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+              <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+              <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_9612e1a3261cb5689813bf38b_0b23dfca54" tabindex="-1" value=""></div>
+              <div class="clear"><input type="submit" value="Get some" name="subscribe" id="mc-embedded-subscribe" class="button btn btn-xl"></div>
+              </div>
+              </form>
+            </div>
+            <!--End mc_embed_signup-->
+        </div>
+    </section>
+    {{ partial "analytics.html" . }}
+  </body>
+</html>

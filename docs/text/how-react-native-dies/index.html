@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
+    <link href="/css/agency.min.css" rel="stylesheet">
+    <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+    #mc_embed_signup{clear:left; font:14px Helvetica,Arial,sans-serif; width:100%;}
+
+    blockquote {
+      color: #555;
+      font-style: italic;
+    }
+
+    body {
+      font-family: 'Roboto';
+      padding-top: 5vh;
+    }
+    img.pan {
+      float: left;
+      padding-right: 10px;
+      width: 50vw;
+      shape-outside: url('/img/code-cookbook.svg');
+    }
+    h1, h2, h3 {
+      max-width: calc(100vw - (.75em + 2vw));
+    }
+    h1, h2, h3, p {
+      position: relative;
+      left: calc(.5em + 2vw);
+    }
+    p {
+      font-size: 1.1em;
+      line-height: 1.5em;
+      max-width: 70vw;
+    }
+    @media (max-width: 768px) {
+      p {
+        max-width: calc(100vw - (.75em + 2vw));
+      }
+    }
+
+    .section-heading > a {
+      color: white;
+    }
+
+    </style>
+    <title>How React Native Dies</title>
+  </head>
+  <body>
+    <img class="pan" src="/img/code-cookbook.svg"/>
+    <div>
+      <h1>How React Native Dies</h1>
+      
+
+<h2 id="by-chef-matt-code-cookbook-http-codecookbook-co:deace3791fa6c92da778bfa1c5dd04ee">by Chef Matt @ <a href="http://codecookbook.co">Code Cookbook</a></h2>
+
+<blockquote>
+<p>Recruiter: &ldquo;Why don&rsquo;t you want to work at a company that uses Cordova?&rdquo;</p>
+
+<p>Me: &ldquo;Look at the top 100 apps in the app store. None of those apps use Cordova. I want to build the best possible apps I can, so I don&rsquo;t use Cordova, nor am I interested in learning how to build Cordova applications.&rdquo;</p>
+</blockquote>
+
+<p>As the above (actual) conversation suggests, I&rsquo;ve typically been skeptical of any kind of mobile development that doesn&rsquo;t use the Android and iOS SDKs. I was skeptical of React Native too until I tried it. Now, I honestly believe that React Native <em>can</em> be a viable contender to standard mobile application development. This is exciting. Writing nearly identical code for both platforms is a huge waste of time, so the &ldquo;learn once. write everywhere&rdquo; value proposition is pretty compelling.</p>
+
+<p>I really want react native to succeed, but there&rsquo;s a lot of hype around react native right now, and this hype can blind us to potentially deadly problems that react native faces as a technology. <a href="https://hbr.org/2007/09/performing-a-project-premortem">Pre-mortems</a> are thought experiments designed to help us look past a project&rsquo;s hype and think carefully about what needs to change about a product so that it can be successful in the long run. This article is a pre-mortem on React Native. It&rsquo;s an invitation to imagine how react native dies so that we can make sure that it lives in the long run. I don&rsquo;t think anyone wants to to writing nearly identical code on both platforms, so we all have some work to do to make sure that React Native makes it.</p>
+
+<h3 id="react-native-the-adoption-lifecycle-and-the-chasm:deace3791fa6c92da778bfa1c5dd04ee">React Native, the Adoption Lifecycle, and &ldquo;the Chasm&rdquo;</h3>
+
+<p><img src="/img/adoption-lifecycle.png" alt="Adoption lifecycle" /></p>
+
+<p>&ldquo;<a href="https://en.wikipedia.org/wiki/Technology_adoption_life_cycle">The adoption lifecycle</a>,&rdquo; as the name implies, divides a product&rsquo;s adopters into different categories based on when they&rsquo;ll adopt a product. Right now, I&rsquo;d say that react native is being adopted by some &ldquo;early adopters&rdquo; like <a href="https://medium.com/@clayallsopp/react-native-in-production-2b3c6e6078ad#.bh69dkdlp">Palantir</a>, <a href="https://developers.soundcloud.com/blog/react-native-at-soundcloud">Sound Cloud</a>, <a href="http://artsy.github.io/blog/2016/08/15/React-Native-at-Artsy">Artsy</a>, and <a href="https://chalkchisel.com/blog/ios-developer-react-native">Chalk and Chisel</a>.</p>
+
+<p><a href="https://en.wikipedia.org/wiki/Crossing_the_Chasm">Geoffrey Moore famously suggested</a> that its <em>more difficult</em> for a product to capture the <em>early majority</em> than it is to capture <em>early adopters</em>. Moreover, he claims that the many products and companies dies as a result of failing to &ldquo;cross the chasm&rdquo; between early adopters and the early majority.</p>
+
+<p>Interestingly, he claims via a &ldquo;High-Tech Parable&rdquo; that a product is often at the edge of the chasm just when hype about a new product is at its greatest.</p>
+
+<blockquote>
+<p>&hellip;the company wins over several more visionary early adopters, including a handful of truly major deals&hellip;everyone is convinced it is time to ramp up&hellip;[one year later]&hellip;third quarter revenue results are in - and they&rsquo;re absolutely dismal&hellip;What the company staff interpreted as a ramp in sales leading smoothly &ldquo;up the [adoption lifecycle] curve&rdquo; was in fact an initial blip&hellip;and not the first indications of an emerging mainstream market.</p>
+
+<p>Crossing the Chasm, 23-24</p>
+</blockquote>
+
+<p>I think that react native is actually close to the edge of the chasm, so the path forward for React Native, if we want to take Geoffrey Moore&rsquo;s model seriously, is to find a way to win over the early majority.</p>
+
+<h3 id="helping-react-native-cross-the-chasm:deace3791fa6c92da778bfa1c5dd04ee">Helping React Native Cross the Chasm</h3>
+
+<p>Who exactly is the early majority? Well, they are companies whose developers are more skeptical versions of me. These companies are full of native mobile developers who have invested a ton of time and energy learning the iOS and Android SDKs. These developers have seen Cordova come and go and they&rsquo;re skeptical that anything other than the iOS and Android SDKs can deliver a truly native <em>look and feel.</em></p>
+
+<p><strong>If this is true, then we can identify one thing that could kill react native: a user experience that doesn&rsquo;t <em>look and feel</em> like ordinary Android and iOS apps.</strong></p>
+
+<p>This may seem obvious. After all, the whole point of react native is to let us build apps that feel like native apps without duplicating code across platforms. But hear me out. I think that many <em>react native developers are failing at this</em>.</p>
+
+<p>Although react native is capable of delivering a native look and feel, I think many react native developers fail to take <em>full</em> advantage of this. Many react native applications that I look at still look like web applications. These applications don&rsquo;t exhibit any real concern for following the <em>UI design guidelines for the various platforms.</em></p>
+
+<p>I think that if react native dies, it&rsquo;ll be because it doesn&rsquo;t figure out how to make it easy for its community to take build apps to the Android and iOS design specs. Maybe the folks at Facebook don&rsquo;t even necessarily need to change anything about react native for this to happen. Maybe we, as developers, just need to decide to do better with this.</p>
+
+<h3 id="conclusion:deace3791fa6c92da778bfa1c5dd04ee">Conclusion</h3>
+
+<p>If you agree, then the next time you start a react native app, checkout the <a href="https://material.google.com/">Android</a> and <a href="https://developer.apple.com/ios/human-interface-guidelines/">iOS</a> design guidelines and tell you friends to do the same. If you think I&rsquo;m wrong, then I&rsquo;d love to hear what you think is the most threatening problem that react native faces on its way to mainstream adoption.</p>
+
+<p>Either way, let&rsquo;s do what we can to make sure that we don&rsquo;t have to go back to writing the same code on two different platforms.</p>
+
+    </div>
+    <section id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading"><a href="http://codecookbook.co">Code Cookbook</a></h2>
+                    <h3 class="section-subheading text-muted">Recipes for building great React Native Apps delivered on the regular</h3>
+                </div>
+            </div>
+            
+            <div id="mc_embed_signup">
+              <form action="//universityandroid.us11.list-manage.com/subscribe/post?u=9612e1a3261cb5689813bf38b&amp;id=0b23dfca54" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+              <div id="mc_embed_signup_scroll">
+
+              <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+              
+              <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_9612e1a3261cb5689813bf38b_0b23dfca54" tabindex="-1" value=""></div>
+              <div class="clear"><input type="submit" value="Get some" name="subscribe" id="mc-embedded-subscribe" class="button btn btn-xl"></div>
+              </div>
+              </form>
+            </div>
+            
+        </div>
+    </section>
+    
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-83852195-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+  </body>
+</html>
