@@ -1,10 +1,12 @@
 +++
-date = "2016-09-12T23:41:28-04:00"
-draft = true
+date = "2016-09-14T16:31:20-04:00"
+draft = false
 title = "How React Native Dies"
 +++
 
 ## by Chef Matt @ [Code Cookbook](http://codecookbook.co)
+
+## Update: I've had a conversation with Brent Vatne that's led me to slightly revise the position I articulate here. Pieces of that conversation are included at the end of this article.
 
 >Recruiter: "Why don't you want to work at a company that uses Cordova?"
 
@@ -51,3 +53,30 @@ If you agree, then the next time you start a react native app, checkout the [And
 
 Either way, let's do what we can to make sure that we don't have to go back to writing the same code on two different platforms.
 
+### Appendix: Talking with Brent
+
+Brent: I think your conclusion is half on target and half off fwiw. [At one point you say,]
+
+>Although react native is capable of delivering a native look and feel, I think many react native developers fail to take full advantage of this. Many react native applications that I look at still look like web applications. These applications don’t exhibit any real concern for following the UI design guidelines for the various platforms.
+
+I definitely agree that many developers don’t take advantage of it but i’m not convinced that the most poorly built apps using a tool will lead to it not succeeding. [At another point you say,]
+
+>I think that if react native dies, it’ll be because it doesn’t figure out how to make it easy for its community to take build apps to the Android and iOS design specs
+
+Again, I’m not sure this matters because hardly anyone properly follows this on ios and Android anyways. The only apps i have on my phone with material design properly done are from google :P
+
+Matt: Haha. Good point. So what do you think is the most pressing problem RN faces?
+
+Brent: From my point of view, some equivalent of uicollectionview/uitableview and android listview are a big concern still…[and] contact lists are difficult with react native, but super easy with native. Of course people can always drop down to native and bridge some view, which is what people do. But the biggest problems faced by react native are: a) startup time - it should be just as fast to render a part of your app with react native as it would be without - and b) listviews, very complex gestures. I group these together because they’re big problems that are both related to react-native async architecture that is in many ways incredible but makes these things more difficult see this talk re: gestures.
+
+Brent: Imo it’s not important to follow some narrowly defined designed language like material design. The web works great on desktop without any well defined language, but there are common patterns that work and people use those and everyone is happy. Also, I think being completely adherent with a platform specific design language hurts code reuse. Apps like f8 and many other RN apps have different navigation layouts but the actual content views are usually shared.
+
+Matt: I think you’re probably right that its not important to follow a narrowly designed language like material design. I’m actually not really committed to the importance of following a design language. I think it would have been better if [in the above article] I said something like: RN lets us create native experiences that feel just as good as regular native apps. A lot of devs aren’t taking advantage of this and that hurts RN. The design guidelines are a good starting point for understanding the potential for your RN app. Does that seem more plausible to you?
+
+Brent: Imo the basic premise of the article is awesome – you should think about how something might fail and that can help to prevent it. I’m not convinced that developers doing a bad job with their apps is hurting RN, because there are plenty doing great apps. Moreover, when I talk about react native dying, its purely as a thought exercise as you mentioned in the intro to your article. It's not going away. It's getting better every day and still far ahead of the next best comparable tool, so when I say “die” here i more mean 'fail to achieve the dream of what it could be'
+
+Matt: Fair enough. You’re in a better position to judge that than me, to be honest. I just haven’t been super impressed by what I’ve seen, including some of the apps that were mentioned at one react conf. video I saw.
+
+Brent: Ya fair enough, lots of em aren’t great.
+
+Matt: I’ll look harder though and maybe I’ll come around to your point of view ;)

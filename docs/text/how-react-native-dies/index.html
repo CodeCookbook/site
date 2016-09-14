@@ -32,9 +32,10 @@
       left: calc(.5em + 2vw);
     }
     p {
-      font-size: 1.1em;
+      font-size: 1.25em;
       line-height: 1.5em;
       max-width: 70vw;
+      margin-bottom: 1.8em;     
     }
     @media (max-width: 768px) {
       p {
@@ -56,6 +57,8 @@
       
 
 <h2 id="by-chef-matt-code-cookbook-http-codecookbook-co:deace3791fa6c92da778bfa1c5dd04ee">by Chef Matt @ <a href="http://codecookbook.co">Code Cookbook</a></h2>
+
+<h2 id="update-i-ve-had-a-conversation-with-brent-vatne-that-s-led-me-to-slightly-revise-the-position-i-articulate-here-pieces-of-that-conversation-are-included-at-the-end-of-this-article:deace3791fa6c92da778bfa1c5dd04ee">Update: I&rsquo;ve had a conversation with Brent Vatne that&rsquo;s led me to slightly revise the position I articulate here. Pieces of that conversation are included at the end of this article.</h2>
 
 <blockquote>
 <p>Recruiter: &ldquo;Why don&rsquo;t you want to work at a company that uses Cordova?&rdquo;</p>
@@ -95,13 +98,47 @@
 
 <p>Although react native is capable of delivering a native look and feel, I think many react native developers fail to take <em>full</em> advantage of this. Many react native applications that I look at still look like web applications. These applications don&rsquo;t exhibit any real concern for following the <em>UI design guidelines for the various platforms.</em></p>
 
-<p>I think that if react native dies, it&rsquo;ll be because it doesn&rsquo;t figure out how to make it easy for its community to take build apps to the Android and iOS design specs. Maybe the folks at Facebook don&rsquo;t even necessarily need to change anything about react native for this to happen. Maybe we, as developers, just need to decide to do better with this.</p>
+<p>I think that if react native dies, it&rsquo;ll be because it doesn&rsquo;t figure out how to make it easy for its community to build apps that fall in line with the Android and iOS UI and UX design specs. Maybe the folks at Facebook don&rsquo;t even necessarily need to change anything about react native for this to happen. Maybe we, as developers, just need to decide to do better with this.</p>
+
+<p>As more native developers come on board, the job of convincing the others will be easier. This isn&rsquo;t just because people like to hop on band wagons. As <a href="http://artsy.github.io/blog/2016/08/15/React-Native-at-Artsy/">Eloy from Artsy</a> and <a href="https://www.youtube.com/watch?v=2Zthnq-hIXA">James from Exponent</a> have pointed out, native developers have insight on how to build better react native applications and when the skeptical native developers start seeing more quality react native apps, they&rsquo;ll eventually be won over.</p>
 
 <h3 id="conclusion:deace3791fa6c92da778bfa1c5dd04ee">Conclusion</h3>
 
 <p>If you agree, then the next time you start a react native app, checkout the <a href="https://material.google.com/">Android</a> and <a href="https://developer.apple.com/ios/human-interface-guidelines/">iOS</a> design guidelines and tell you friends to do the same. If you think I&rsquo;m wrong, then I&rsquo;d love to hear what you think is the most threatening problem that react native faces on its way to mainstream adoption.</p>
 
 <p>Either way, let&rsquo;s do what we can to make sure that we don&rsquo;t have to go back to writing the same code on two different platforms.</p>
+
+<h3 id="appendix-talking-with-brent:deace3791fa6c92da778bfa1c5dd04ee">Appendix: Talking with Brent</h3>
+
+<p>Brent: I think your conclusion is half on target and half off fwiw. [At one point you say,]</p>
+
+<blockquote>
+<p>Although react native is capable of delivering a native look and feel, I think many react native developers fail to take full advantage of this. Many react native applications that I look at still look like web applications. These applications don’t exhibit any real concern for following the UI design guidelines for the various platforms.</p>
+</blockquote>
+
+<p>I definitely agree that many developers don’t take advantage of it but i’m not convinced that the most poorly built apps using a tool will lead to it not succeeding. [At another point you say,]</p>
+
+<blockquote>
+<p>I think that if react native dies, it’ll be because it doesn’t figure out how to make it easy for its community to take build apps to the Android and iOS design specs</p>
+</blockquote>
+
+<p>Again, I’m not sure this matters because hardly anyone properly follows this on ios and Android anyways. The only apps i have on my phone with material design properly done are from google :P</p>
+
+<p>Matt: Haha. Good point. So what do you think is the most pressing problem RN faces?</p>
+
+<p>Brent: From my point of view, some equivalent of uicollectionview/uitableview and android listview are a big concern still…[and] contact lists are difficult with react native, but super easy with native. Of course people can always drop down to native and bridge some view, which is what people do. But the biggest problems faced by react native are: a) startup time - it should be just as fast to render a part of your app with react native as it would be without - and b) listviews, very complex gestures. I group these together because they’re big problems that are both related to react-native async architecture that is in many ways incredible but makes these things more difficult see this talk re: gestures.</p>
+
+<p>Brent: Imo it’s not important to follow some narrowly defined designed language like material design. The web works great on desktop without any well defined language, but there are common patterns that work and people use those and everyone is happy. Also, I think being completely adherent with a platform specific design language hurts code reuse. Apps like f8 and many other RN apps have different navigation layouts but the actual content views are usually shared.</p>
+
+<p>Matt: I think you’re probably right that its not important to follow a narrowly designed language like material design. I’m actually not really committed to the importance of following a design language. I think it would have been better if [in the above article] I said something like: RN lets us create native experiences that feel just as good as regular native apps. A lot of devs aren’t taking advantage of this and that hurts RN. The design guidelines are a good starting point for understanding the potential for your RN app. Does that seem more plausible to you?</p>
+
+<p>Brent: Imo the basic premise of the article is awesome – you should think about how something might fail and that can help to prevent it. I’m not convinced that developers doing a bad job with their apps is hurting RN, because there are plenty doing great apps. Moreover, when I talk about react native dying, its purely as a thought exercise as you mentioned in the intro to your article. It&rsquo;s not going away. It&rsquo;s getting better every day and still far ahead of the next best comparable tool, so when I say “die” here i more mean &lsquo;fail to achieve the dream of what it could be&rsquo;</p>
+
+<p>Matt: Fair enough. You’re in a better position to judge that than me, to be honest. I just haven’t been super impressed by what I’ve seen, including some of the apps that were mentioned at one react conf. video I saw.</p>
+
+<p>Brent: Ya fair enough, lots of em aren’t great.</p>
+
+<p>Matt: I’ll look harder though and maybe I’ll come around to your point of view ;)</p>
 
     </div>
     <section id="contact">
