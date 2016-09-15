@@ -2,6 +2,7 @@
 date = "2016-09-14T16:31:20-04:00"
 draft = false
 title = "How React Native Dies"
+subscribecopy = "Get Recipes for building React Native that Feel Native"
 +++
 
 ## by Chef Matt @ [Code Cookbook](http://codecookbook.co)
@@ -52,6 +53,8 @@ As more native developers come on board, the job of convincing the others will b
 If you agree, then the next time you start a react native app, checkout the [Android](https://material.google.com/) and [iOS](https://developer.apple.com/ios/human-interface-guidelines/) design guidelines and tell you friends to do the same. If you think I'm wrong, then I'd love to hear what you think is the most threatening problem that react native faces on its way to mainstream adoption.
 
 Either way, let's do what we can to make sure that we don't have to go back to writing the same code on two different platforms.
+
+Code Cookbook creates recipes for building great react native apps. We have native mobile development experience, so we've got a little insight into how to build your react native apps so that they feel like native iOS and Android apps. If you'd like to learn more about how to build react native apps that feel like great native apps, [sign up for our mailing list](#contact). We'll be publishing recipes on this topic soon.
 
 ### Appendix: Talking with Brent
 
