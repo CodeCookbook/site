@@ -2,7 +2,7 @@
 date = "2016-09-14T16:31:20-04:00"
 draft = false
 title = "How React Native Dies"
-subscribecopy = "Get Recipes for building React Native that Feel Native"
+subscribecopy = "Get Recipes for building React Native Apps that Feel Native"
 +++
 
 ## by Chef Matt @ [Code Cookbook](http://codecookbook.co)
