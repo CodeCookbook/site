@@ -1,4 +1,4 @@
-{{ partial "header.html" .}}
+{{ partial "head.html" . }}
 
 <body id="page-top" class="index">
 
@@ -17,15 +17,7 @@
         <!-- /.container-fluid -->
     </nav>
 
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <div class="intro-text">
-                <div class="intro-heading">React Native Recipies for great apps</div>
-                <a href="#contact" class="page-scroll btn btn-xl">Subscribe</a>
-            </div>
-        </div>
-    </header>
+    {{ partial "header.html" . }}
 
     <section id="portfolio" class="bg-light-gray">
         <div class="container">
