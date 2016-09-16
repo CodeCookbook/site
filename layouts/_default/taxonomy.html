@@ -1,13 +1,15 @@
 {{ partial "head.html" . }}
 
-{{ partial "header.html" . }}
+{{ partial "nav.html" . }}
+
+{{ partial "header.html" (index .Site.Data.landing "rnux") }}
 
 <section id="portfolio" class="bg-light-gray">
     <div class="container">
       {{ range .Data.Pages }}
           {{ .Render "summary" }}
       {{ end }}
-      {{ range (index .Site.Data.future "ux") }}
+      {{ range (index .Site.Data.landing "rnux" "posts") }}
           {{ partial "image-item.html" . }}
       {{ end }}
     </div>

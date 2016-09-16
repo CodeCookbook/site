@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Texts on Code Cookbook</title>
-    <link>http://codecookbook.co/text/</link>
-    <description>Recent content in Texts on Code Cookbook</description>
+    <title>Rn Ux on Code Cookbook</title>
+    <link>http://codecookbook.co/categories/rn-ux/</link>
+    <description>Recent content in Rn Ux on Code Cookbook</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 14 Sep 2016 16:31:20 -0400</lastBuildDate>
-    <atom:link href="http://codecookbook.co/text/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://codecookbook.co/categories/rn-ux/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>How React Native Dies</title>
