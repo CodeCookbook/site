@@ -1,0 +1,20 @@
+<!-- Header -->
+<header>
+    <div class="container">
+        <div class="intro-text">
+            <div class="intro-heading">
+              {{ if isset . "introheading" }}
+                .introheading
+              {{ else }}
+                React Native Recipies for great apps
+              {{ end }}
+            </div>
+              {{ if isset . "introcalltoaction" }}
+                <a href="#{{.calltoactionsection}}" class="page-scroll btn btn-xl">{{ .introcalltoaction }}</a>
+              {{ else }}
+                <a href="#contact" class="page-scroll btn btn-xl">Subscribe</a>
+              {{ end }}
+            </a>
+        </div>
+    </div>
+</header>

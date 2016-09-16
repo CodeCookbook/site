@@ -1,0 +1,17 @@
+{{ partial "head.html" . }}
+
+{{ partial "header.html" . }}
+
+<section id="portfolio" class="bg-light-gray">
+    <div class="container">
+      {{ range .Data.Pages }}
+          {{ .Render "summary" }}
+      {{ end }}
+      {{ range (index .Site.Data.future "ux") }}
+          {{ partial "image-item.html" . }}
+      {{ end }}
+    </div>
+</section>
+
+{{ partial "subscribe.html" . }}
+{{ partial "footer.html" . }}
