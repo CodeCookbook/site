@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Code Cookbook</title>
-    <link>http://codecookbook.co/</link>
+    <link>https://codecookbook.co/</link>
     <description>Recent content on Code Cookbook</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 14 Sep 2016 16:31:20 -0400</lastBuildDate>
-    <atom:link href="http://codecookbook.co/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://codecookbook.co/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>How React Native Dies</title>
-      <link>http://codecookbook.co/text/how-react-native-dies/</link>
+      <link>https://codecookbook.co/text/how-react-native-dies/</link>
       <pubDate>Wed, 14 Sep 2016 16:31:20 -0400</pubDate>
       
-      <guid>http://codecookbook.co/text/how-react-native-dies/</guid>
+      <guid>https://codecookbook.co/text/how-react-native-dies/</guid>
       <description>
 
 &lt;h2 id=&#34;by-chef-matt-code-cookbook-http-codecookbook-co:deace3791fa6c92da778bfa1c5dd04ee&#34;&gt;by Chef Matt @ &lt;a href=&#34;http://codecookbook.co&#34;&gt;Code Cookbook&lt;/a&gt;&lt;/h2&gt;
@@ -33,7 +33,7 @@
 
 &lt;h3 id=&#34;react-native-the-adoption-lifecycle-and-the-chasm:deace3791fa6c92da778bfa1c5dd04ee&#34;&gt;React Native, the Adoption Lifecycle, and &amp;ldquo;the Chasm&amp;rdquo;&lt;/h3&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://codecookbook.co/img/adoption-lifecycle.png&#34; alt=&#34;Adoption lifecycle&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://codecookbook.co/img/adoption-lifecycle.png&#34; alt=&#34;Adoption lifecycle&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&amp;ldquo;&lt;a href=&#34;https://en.wikipedia.org/wiki/Technology_adoption_life_cycle&#34;&gt;The adoption lifecycle&lt;/a&gt;,&amp;rdquo; as the name implies, divides a product&amp;rsquo;s adopters into different categories based on when they&amp;rsquo;ll adopt a product. Right now, I&amp;rsquo;d say that react native is being adopted by some &amp;ldquo;early adopters&amp;rdquo; like &lt;a href=&#34;https://medium.com/@clayallsopp/react-native-in-production-2b3c6e6078ad#.bh69dkdlp&#34;&gt;Palantir&lt;/a&gt;, &lt;a href=&#34;https://developers.soundcloud.com/blog/react-native-at-soundcloud&#34;&gt;Sound Cloud&lt;/a&gt;, &lt;a href=&#34;http://artsy.github.io/blog/2016/08/15/React-Native-at-Artsy&#34;&gt;Artsy&lt;/a&gt;, and &lt;a href=&#34;https://chalkchisel.com/blog/ios-developer-react-native&#34;&gt;Chalk and Chisel&lt;/a&gt;.&lt;/p&gt;
 
@@ -107,10 +107,10 @@
     
     <item>
       <title>How to Build a React Native Login Form with Redux Pt1</title>
-      <link>http://codecookbook.co/post/how-to-build-a-react-native-login-form-with-redux-pt1/</link>
+      <link>https://codecookbook.co/post/how-to-build-a-react-native-login-form-with-redux-pt1/</link>
       <pubDate>Mon, 12 Sep 2016 01:04:07 -0400</pubDate>
       
-      <guid>http://codecookbook.co/post/how-to-build-a-react-native-login-form-with-redux-pt1/</guid>
+      <guid>https://codecookbook.co/post/how-to-build-a-react-native-login-form-with-redux-pt1/</guid>
       <description>
 
 &lt;h2 id=&#34;introduction:287ac7e57179b39589a237849432314e&#34;&gt;Introduction&lt;/h2&gt;
@@ -221,10 +221,10 @@ function that maps from the event props on the contained component to a function
     
     <item>
       <title>How to Make Network Requests in React Native</title>
-      <link>http://codecookbook.co/post/how-to-make-network-requests-in-react-native/</link>
+      <link>https://codecookbook.co/post/how-to-make-network-requests-in-react-native/</link>
       <pubDate>Sun, 11 Sep 2016 01:28:06 -0400</pubDate>
       
-      <guid>http://codecookbook.co/post/how-to-make-network-requests-in-react-native/</guid>
+      <guid>https://codecookbook.co/post/how-to-make-network-requests-in-react-native/</guid>
       <description>
 
 &lt;h2 id=&#34;introduction:fed7aec0e8d48d1d0c4a3342352ee821&#34;&gt;Introduction&lt;/h2&gt;
@@ -299,10 +299,10 @@ requests. This video shows you how to do that, and it pays particular attention 
     
     <item>
       <title>How to Share Text from your React Native App</title>
-      <link>http://codecookbook.co/post/how-to-share-text-from-your-react-native-app/</link>
+      <link>https://codecookbook.co/post/how-to-share-text-from-your-react-native-app/</link>
       <pubDate>Fri, 09 Sep 2016 18:58:27 -0400</pubDate>
       
-      <guid>http://codecookbook.co/post/how-to-share-text-from-your-react-native-app/</guid>
+      <guid>https://codecookbook.co/post/how-to-share-text-from-your-react-native-app/</guid>
       <description>
 
 &lt;h2 id=&#34;introduction:6e0d15726fad3e9897ecfbfbfa17ddbc&#34;&gt;Introduction&lt;/h2&gt;
@@ -394,10 +394,10 @@ requests. This video shows you how to do that, and it pays particular attention 
     
     <item>
       <title>cooking with rxjs</title>
-      <link>http://codecookbook.co/post/cooking-with-rxjs/</link>
+      <link>https://codecookbook.co/post/cooking-with-rxjs/</link>
       <pubDate>Thu, 08 Sep 2016 23:22:11 -0400</pubDate>
       
-      <guid>http://codecookbook.co/post/cooking-with-rxjs/</guid>
+      <guid>https://codecookbook.co/post/cooking-with-rxjs/</guid>
       <description></description>
     </item>
     
