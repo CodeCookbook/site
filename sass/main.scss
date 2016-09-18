@@ -1,0 +1,26 @@
+@import "bootstrap";
+@import "intro";
+@import "nav";
+@import "contact";
+@import "text";
+@import "mixins";
+
+body {
+  font-family: 'Roboto';
+}
+
+footer {
+  text-align: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+#about {
+  @include section-padding;
+  background-color: #eee;
+}
+
+.btn {
+  @include button-variant(white, $brand-primary, transparent);
+  @include button-size(20px, 30px, 20px, 10px, 10px);
+}

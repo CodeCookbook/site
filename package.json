@@ -1,34 +1,27 @@
 {
-  "name": "agency",
-  "title": "Agency",
-  "version": "3.3.7+1",
-  "homepage": "http://startbootstrap.com/template-overviews/agency",
-  "author": "Start Bootstrap",
-  "license": {
-    "type": "MIT",
-    "url": "https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE"
+  "name": "codecookbook",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "bootstrap-sass": "^3.3.7"
   },
   "scripts": {
-    "start": "gulp"
-  },
-  "devDependencies": {
-    "bootstrap": "^3.3.7",
-    "browser-sync": "^2.13.0",
-    "font-awesome": "^4.6.3",
-    "gulp": "^3.9.1",
-    "gulp-clean-css": "^2.0.10",
-    "gulp-header": "^1.8.7",
-    "gulp-less": "^3.1.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^2.3.2",
-    "gulp-uglify": "^1.5.4",
-    "jquery": "^1.11.3"
+    "compile": "bundle exec sass -I node_modules/bootstrap-sass/assets/stylesheets/ -I node_modules/bootstrap-sass/assets/stylesheets/bootstrap/mixins --watch sass/main.scss:static/css/main.css",
+    "start": "./preview.sh"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/BlackrockDigital/startbootstrap-agency.git"
+    "url": "git+https://github.com/CodeCookbook/site.git"
   },
-  "dependencies": {
-    "prismjs": "^1.5.1"
-  }
+  "author": "Code Cookbook",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/CodeCookbook/site/issues"
+  },
+  "homepage": "https://github.com/CodeCookbook/site#readme"
 }

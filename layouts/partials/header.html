@@ -1,20 +1,18 @@
 <!-- Header -->
-<header>
-    <div class="container">
-        <div class="intro-text">
-            <div class="intro-heading">
-              {{ if isset . "introheading" }}
-                {{ .introheading }}
-              {{ else }}
-                React Native Recipies for great apps
-              {{ end }}
-            </div>
-              {{ if isset . "introcalltoaction" }}
-                <a href="#{{.calltoactionsection}}" class="page-scroll btn btn-xl">{{ .introcalltoaction }}</a>
-              {{ else }}
-                <a href="#contact" class="page-scroll btn btn-xl">Subscribe</a>
-              {{ end }}
-            </a>
-        </div>
-    </div>
+<header class="intro">
+  {{ with .heroimage }}
+  <img src="{{.}}" class="img-responsive" alt="" />
+  {{ end }}
+  <section class="text-center">
+    {{ if isset . "introheading" }}
+      <h1>{{ .introheading }}</h1>
+    {{ else }}
+      <h1>Recipies for delicious React Native apps</h1>
+    {{ end }}
+    {{ if isset . "introcalltoaction" }}
+      <h2><a href="#{{.calltoactionsection}}" class="page-scroll btn btn-xl">{{ .introcalltoaction }}</a></h2>
+    {{ else }}
+      <h2><a href="#recipes" class="page-scroll btn btn-lg">See What's Cookin'</a></h2>
+    {{ end }}
+  </section>
 </header>

@@ -1,0 +1,28 @@
+@import "variables";
+@import "buttons";
+
+.intro {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url("/img/soup.jpg");
+  background-position: center, center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: scroll;
+  height: 100vh;
+  padding-left: 20px;
+  padding-right: 20px;
+  color: white;
+}
+
+
+.intro h1 {
+  max-width: 600px;
+  font-size: 75px;
+  @media(max-width: 500px) {
+    font-size: 45px;
+  }
+  margin-bottom: 40px;
+}

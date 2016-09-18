@@ -1,5 +1,7 @@
-baseurl = "http://codecookbook.co/"
+baseurl = "http://codecookbook.co"
 languageCode = "en-us"
 title = "Code Cookbook"
 publishdir = "docs"
+[params]
+  heroimage = "/img/logo.png"
 

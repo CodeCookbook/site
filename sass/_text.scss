@@ -1,0 +1,41 @@
+img.pan {
+  float: left;
+  padding-right: 10px;
+  width: 50vw;
+  shape-outside: url('/img/code-cookbook.svg');
+}
+
+article.wrap-around {
+  blockquote {
+    color: #555;
+    font-style: italic;
+  }
+
+  body {
+    font-family: 'Roboto';
+    padding-top: 5vh;
+  }
+  h1, h2, h3 {
+    max-width: calc(100vw - (.75em + 2vw));
+  }
+  h1, h2, h3, p {
+    position: relative;
+    left: calc(.5em + 2vw);
+  }
+  p {
+    font-size: 1.25em;
+    line-height: 1.5em;
+    max-width: 70vw;
+    margin-bottom: 1.8em;
+  }
+  @media (max-width: 768px) {
+    p {
+      max-width: calc(100vw - (.75em + 2vw));
+    }
+  }
+
+}
+
+.section-heading > a {
+  color: white;
+}

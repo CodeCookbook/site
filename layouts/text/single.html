@@ -2,61 +2,20 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
-    <link href="/css/agency.min.css" rel="stylesheet">
-    <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <style type="text/css">
-    #mc_embed_signup{clear:left; font:14px Helvetica,Arial,sans-serif; width:100%;}
-
-    blockquote {
-      color: #555;
-      font-style: italic;
-    }
-
-    body {
-      font-family: 'Roboto';
-      padding-top: 5vh;
-    }
-    img.pan {
-      float: left;
-      padding-right: 10px;
-      width: 50vw;
-      shape-outside: url('/img/code-cookbook.svg');
-    }
-    h1, h2, h3 {
-      max-width: calc(100vw - (.75em + 2vw));
-    }
-    h1, h2, h3, p {
-      position: relative;
-      left: calc(.5em + 2vw);
-    }
-    p {
-      font-size: 1.25em;
-      line-height: 1.5em;
-      max-width: 70vw;
-      margin-bottom: 1.8em;
-    }
-    @media (max-width: 768px) {
-      p {
-        max-width: calc(100vw - (.75em + 2vw));
-      }
-    }
-
-    .section-heading > a {
-      color: white;
-    }
-
-    </style>
+    <link href="/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/css/main.css" rel="stylesheet">
     <title>{{.Title}}</title>
   </head>
   <body>
     <img class="pan" src="/img/code-cookbook.svg"/>
-    <div>
+    <article class="wrap-around">
       <h1>{{.Title}}</h1>
       {{.Content}}
-    </div>
-    <section id="contact">
+    </article>
+    <section id="subscribe">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -80,33 +39,4 @@
             <!--End mc_embed_signup-->
         </div>
     </section>
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <span class="copyright">Copyright &copy; Code Cookbook 2016</span>
-                </div>
-                <!-- <div class="col-md-4">
-                    <ul class="list-inline social-buttons">
-                        <li><a href="#"><i class="fa fa-twitter"></i></a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-facebook"></i></a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-linkedin"></i></a>
-                        </li>
-                    </ul>
-                </div> -->
-                <!-- <div class="col-md-4">
-                    <ul class="list-inline quicklinks">
-                        <li><a href="#">Privacy Policy</a>
-                        </li>
-                        <li><a href="#">Terms of Use</a>
-                        </li>
-                    </ul>
-                </div> -->
-            </div>
-        </div>
-    </footer>
-    {{ partial "analytics.html" . }}
-  </body>
-</html>
+{{ partial "footer.html" . }}
