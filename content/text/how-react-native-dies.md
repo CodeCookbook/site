@@ -2,9 +2,10 @@
 date = "2016-09-14T16:31:20-04:00"
 draft = false
 title = "How React Native Dies"
-description = "I really want react native to succeed, but there's a lot of hype around react native right now, and this hype can blind us to potentially deadly problems that react native faces as a technology. Pre-mortems are thought experiments designed to help us look past a project's hype and think carefully about what needs to change about a product so that it can be successful in the long run. This article is a pre-mortem on React Native. It's an invitation to imagine how react native dies so that we can make sure that it lives in the long run."
+description = "Pre-mortems are thought experiments designed to help us look past a project's hype and think carefully about what needs to change about a product so that it can be successful in the long run. This article is a pre-mortem on React Native. It's an invitation to imagine how react native dies so that we can make sure that it lives in the long run."
 categories = ["rn-ux"]
 subscribecopy = "Recipes that help you put the 'Native' in 'React Native'"
+image = "grave.jpg"
 +++
 
 ## by Chef Matt @ [Code Cookbook](http://codecookbook.co)

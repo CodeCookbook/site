@@ -1,9 +1,14 @@
 {{ partial "head.html" . }}
   <body>
-    <img class="pan" src="/img/code-cookbook.svg"/>
-    <article class="wrap-around">
-      <h1>{{.Title}}</h1>
-      {{.Content}}
+    {{ partial "nav.html" . }}
+    <header class="intro text-center padding-top" style="background-image: url({{.Site.BaseURL}}/img/{{.Params.image}})">
+      <h1>{{ .Title }}</h1>
+      <h2>{{ .Description }}</h2>
+    </header>
+    <article class="container">
+      <div class="col-md-offset-2 col-md-8">
+        {{.Content}}
+      </div>
     </article>
     <section id="subscribe">
         <div class="container">
