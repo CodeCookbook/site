@@ -10,10 +10,29 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: scroll;
-  height: 100vh;
+  min-height: 100vh;
+  padding-top: 50px;
+  padding-bottom: 50px;
   padding-left: 20px;
   padding-right: 20px;
   color: white;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.intro h1, .intro h2 {
+  animation-name: fadein;
+  animation-fill-mode: both;
+  animation-duration: 1.5s;
+  animation-delay: 1s;
 }
 
 .intro h1 {
