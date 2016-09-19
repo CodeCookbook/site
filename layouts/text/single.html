@@ -1,16 +1,4 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    {{ partial "redirect.html" . }}
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link rel="canonical" href=" {{ .Site.BaseURL }}{{ .RelPermalink }}"/>
-    <link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
-    <link href="/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <link href="/css/main.css" rel="stylesheet">
-    <title>{{.Title}}</title>
-  </head>
+{{ partial "head.html" . }}
   <body>
     <img class="pan" src="/img/code-cookbook.svg"/>
     <article class="wrap-around">
