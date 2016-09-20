@@ -1,10 +1,21 @@
-[rnux]
+[rn-ux]
   introheading = "Recipes that Help You Put the 'Native' in 'React Native'"
   introcalltoaction = "See Examples"
   calltoactionsection = "portfolio"
-[[rnux.posts]]
+[[rn-ux.posts]]
   Title = "Native Feeling Tabs/Navigation"
   Description = "Coming soon..."
-[[rnux.posts]]
+[[rn-ux.posts]]
   Title = "Get the share button right!"
+  Description = "Coming soon..."
+[rnupdates]
+  introheading = "Everything you need to know about React Native releases"
+  introcalltoaction = "Get in the know"
+  calltoactionsection = "portfolio"
+  subscribecopy = "Get In-depth Analysis of New React Native Releases"
+[[rnupdates.posts]]
+  Title = "Flex-grow, Flex-shrink, and Flex-basis (0.34)"
+  Description = "Coming soon..."
+[[rnupdates.posts]]
+  Title = "Getting events in Text's onPress prop (0.34)"
   Description = "Coming soon..."

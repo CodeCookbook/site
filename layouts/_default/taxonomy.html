@@ -2,14 +2,16 @@
 
 {{ partial "nav.html" . }}
 
-{{ partial "header.html" (index .Site.Data.landing "rnux") }}
+{{ $category := index (index (index .Data.Pages 0).Params.categories) 0 }}
+
+{{ partial "header.html" (index .Site.Data.landing $category) }}
 
 <section id="portfolio" class="bg-light-gray">
     <div class="container">
       {{ range .Data.Pages }}
           {{ .Render "summary" }}
       {{ end }}
-      {{ range (index .Site.Data.landing "rnux" "posts") }}
+      {{ range (index .Site.Data.landing $category "posts") }}
           {{ partial "image-item.html" . }}
       {{ end }}
     </div>
@@ -18,5 +20,5 @@
     </div>
 </section>
 
-{{ partial "subscribe.html" . }}
+{{ partial "subscribe.html" (index .Site.Data.landing $category) }}
 {{ partial "footer.html" . }}
