@@ -2,8 +2,8 @@
   <body>
     {{ partial "nav.html" . }}
     <header class="intro text-center padding-top" style="background-image: url({{.Site.BaseURL}}/img/{{.Params.image}})">
-      <h1>{{ .Title }}</h1>
-      <h2>{{ .Description }}</h2>
+      <h1 class="fadein">{{ .Title }}</h1>
+      <h2 class="fadein">{{ .Description }}</h2>
     </header>
     <article class="container">
       <div class="col-md-offset-2 col-md-8">
