@@ -5867,6 +5867,10 @@ button.close {
   #subscribe h2, #subscribe h3 {
     color: white; }
 
+article img {
+  display: block;
+  max-width: 100%;
+  height: auto; }
 article blockquote {
   color: #555;
   font-style: italic; }

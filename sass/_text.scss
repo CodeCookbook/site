@@ -1,4 +1,11 @@
+@import "image";
+
 article {
+
+  img {
+    @include img-responsive;
+  }
+
   blockquote {
     color: #555;
     font-style: italic;

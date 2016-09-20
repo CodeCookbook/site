@@ -1,9 +1,17 @@
 {{ partial "head.html" . }}
   <body>
     {{ partial "nav.html" . }}
-    <header class="intro text-center padding-top" style="background-image: url({{.Site.BaseURL}}/img/{{.Params.image}})">
-      <h1 class="fadein">{{ .Title }}</h1>
-      <h2 class="fadein">{{ .Description }}</h2>
+    <header class="intro text-center padding-top"
+      {{ if isset .Params "image" }}
+        style="background-image: url({{.Site.BaseURL}}/img/{{.Params.image}})">
+        <h1 class="fadein">{{ .Title }}</h1>
+        <h2 class="fadein">{{ .Description }}</h2>
+      {{ else }}
+        style="color: black;">
+        <h1>{{ .Title }}</h1>
+        <h2>{{ .Description }}</h2>
+      {{ end }}
+
     </header>
     <article class="container">
       <div class="col-md-offset-2 col-md-8">
