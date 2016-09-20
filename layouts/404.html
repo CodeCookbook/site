@@ -1,16 +1,15 @@
 {{ partial "head.html" . }}
+<body>
+  {{ partial "nav.html" . }}
 
-{{ partial "nav.html" . }}
+  <header>
+      <div class="intro" style="background-image: url(/img/soup.jpg);">
+          <div class="text-center">
+              <h1>Oops. No recipes here.</h1>
+              <a href="/" class="btn btn-xl">Back Home</a>
+          </div>
+      </div>
+  </header>
 
-<header>
-    <div class="container">
-        <div class="intro-text">
-            <div class="intro-heading">
-              Oops. No recipes here.
-            </div>
-            <a href="/" class="page-scroll btn btn-xl">Back Home</a>
-        </div>
-    </div>
-</header>
-
+</body>
 {{ partial "footer.html" . }}

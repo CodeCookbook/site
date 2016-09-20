@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rnupdates on Code Cookbook</title>
+    <link>https://codecookbook.co/categories/rnupdates/</link>
+    <description>Recent content in Rnupdates on Code Cookbook</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 20 Sep 2016 15:21:04 -0400</lastBuildDate>
+    <atom:link href="https://codecookbook.co/categories/rnupdates/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Updates to rnpm for 0.34</title>
+      <link>https://codecookbook.co/text/updates-to-rnpm-for-0.34/</link>
+      <pubDate>Tue, 20 Sep 2016 15:21:04 -0400</pubDate>
+      
+      <guid>https://codecookbook.co/text/updates-to-rnpm-for-0.34/</guid>
+      <description>
+
+&lt;h2 id=&#34;better-logging:c1c78318aafe625d00531d59f01e8755&#34;&gt;Better Logging&lt;/h2&gt;
+
+&lt;p&gt;Sometimes someone adds a library but does not link it. Before React Native 0.34, if you wanted to identify a library that required linking, you would type &lt;code&gt;react-native link&lt;/code&gt;. You would then be presented with a bunch of text that looked like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://cloud.githubusercontent.com/assets/997157/17838588/84223264-6796-11e6-81d2-075d30942a69.png&#34; alt=&#34;Wall of text&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This is a bummer because you had to read a wall of text just to see if rnpm handled the issue.&lt;/p&gt;
+
+&lt;p&gt;Thanks to &lt;a href=&#34;https://twitter.com/GantLaborde?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor&#34;&gt;Gant Laborde&lt;/a&gt;, this release speeds up this process by adding a logging level that only logs for previously linked libraries. Now, if you&amp;rsquo;re in this situation, you can identify libraries that haven&amp;rsquo;t been linked &amp;ldquo;at a glance.&amp;rdquo; It looks a little like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://cloud.githubusercontent.com/assets/997157/17838613/22568c8c-6797-11e6-8e12-c73746ec0eff.png&#34; alt=&#34;Identify unlinked libs at a glance&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;pre-and-post-unlink:c1c78318aafe625d00531d59f01e8755&#34;&gt;Pre and Post Unlink&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;prelink&lt;/code&gt; and &lt;code&gt;postlink&lt;/code&gt;, in case you didn&amp;rsquo;t know, are &lt;a href=&#34;https://github.com/rnpm/rnpm#commands&#34;&gt;rnpm commands&lt;/a&gt; that are used to customize a plugin&amp;rsquo;s setup based on a user&amp;rsquo;s input. They are added to a plugin&amp;rsquo;s &lt;code&gt;package.json&lt;/code&gt; like so:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;&amp;quot;rnpm&amp;quot;: {
+  &amp;quot;commands&amp;quot;: {
+    &amp;quot;prelink&amp;quot;: &amp;quot;./bin/requestGAToken&amp;quot;,
+    &amp;quot;postlink&amp;quot;: &amp;quot;./bin/linkingSucceeded&amp;quot;
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Before 0.34, there wasn&amp;rsquo;t corresponding &lt;code&gt;preunlink&lt;/code&gt; and &lt;code&gt;postunlink&lt;/code&gt; commands that could reverse any customizations that were made during the linking phase. Thanks to &lt;a href=&#34;https://twitter.com/geoffreygoh90&#34;&gt;Geoff Goe&lt;/a&gt;, we now have these additional commands to round out our link hook toolset.&lt;/p&gt;
+
+&lt;p&gt;Be sure to check out &lt;a href=&#34;https://codecookbook.co/categories/rnupdates/&#34;&gt;our upcoming posts&lt;/a&gt; on the improvements for React Native version 0.34. If you want those posts delivered to your inbox, sign up on our email list below.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

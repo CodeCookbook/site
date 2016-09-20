@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+      <title>Updates to rnpm for 0.34</title>
+      <meta name="description" content="With React Native&#39;s 0.34 release, we get some neat improvements around the link command. Better logging makes it easier to spot unlinked libraries and we now have pre- and post- unlink hooks.">
+      <link rel="canonical" href=" https://codecookbook.co/text/updates-to-rnpm-for-0.34/"/>
+      <link rel="stylesheet" href="https://codecookbook.co/vendor/prism/prism-twilight.css" media="screen">
+    
+    <link href="https://codecookbook.co/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <link href="https://codecookbook.co/css/main.css" rel="stylesheet">
+
+    
+    
+    
+    <link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
+</head>
+  <body>
+    
+<nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <a href="/" class="navbar-brand">Code Cookbook</a>
+  </div>
+</nav>
+    <header class="intro text-center padding-top"
+      
+        style="color: black;">
+        <h1>Updates to rnpm for 0.34</h1>
+        <h2>With React Native&#39;s 0.34 release, we get some neat improvements around the link command. Better logging makes it easier to spot unlinked libraries and we now have pre- and post- unlink hooks.</h2>
+      
+
+    </header>
+    <article class="container">
+      <div class="col-md-offset-2 col-md-8">
+        
+
+<h2 id="better-logging:c1c78318aafe625d00531d59f01e8755">Better Logging</h2>
+
+<p>Sometimes someone adds a library but does not link it. Before React Native 0.34, if you wanted to identify a library that required linking, you would type <code>react-native link</code>. You would then be presented with a bunch of text that looked like this:</p>
+
+<p><img src="https://cloud.githubusercontent.com/assets/997157/17838588/84223264-6796-11e6-81d2-075d30942a69.png" alt="Wall of text" /></p>
+
+<p>This is a bummer because you had to read a wall of text just to see if rnpm handled the issue.</p>
+
+<p>Thanks to <a href="https://twitter.com/GantLaborde?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">Gant Laborde</a>, this release speeds up this process by adding a logging level that only logs for previously linked libraries. Now, if you&rsquo;re in this situation, you can identify libraries that haven&rsquo;t been linked &ldquo;at a glance.&rdquo; It looks a little like this:</p>
+
+<p><img src="https://cloud.githubusercontent.com/assets/997157/17838613/22568c8c-6797-11e6-8e12-c73746ec0eff.png" alt="Identify unlinked libs at a glance" /></p>
+
+<h2 id="pre-and-post-unlink:c1c78318aafe625d00531d59f01e8755">Pre and Post Unlink</h2>
+
+<p><code>prelink</code> and <code>postlink</code>, in case you didn&rsquo;t know, are <a href="https://github.com/rnpm/rnpm#commands">rnpm commands</a> that are used to customize a plugin&rsquo;s setup based on a user&rsquo;s input. They are added to a plugin&rsquo;s <code>package.json</code> like so:</p>
+
+<pre><code class="language-javascript">&quot;rnpm&quot;: {
+  &quot;commands&quot;: {
+    &quot;prelink&quot;: &quot;./bin/requestGAToken&quot;,
+    &quot;postlink&quot;: &quot;./bin/linkingSucceeded&quot;
+  }
+}
+</code></pre>
+
+<p>Before 0.34, there wasn&rsquo;t corresponding <code>preunlink</code> and <code>postunlink</code> commands that could reverse any customizations that were made during the linking phase. Thanks to <a href="https://twitter.com/geoffreygoh90">Geoff Goe</a>, we now have these additional commands to round out our link hook toolset.</p>
+
+<p>Be sure to check out <a href="https://codecookbook.co/categories/rnupdates/">our upcoming posts</a> on the improvements for React Native version 0.34. If you want those posts delivered to your inbox, sign up on our email list below.</p>
+
+      </div>
+    </article>
+<section id="subscribe">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading"><a href="http://codecookbook.co">Code Cookbook</a></h2>
+                
+                <h3 class="section-subheading text-muted">Get In-depth Analysis of New React Native Releases</h3>
+                
+            </div>
+        </div>
+        
+        <div id="mc_embed_signup">
+          <form action="//universityandroid.us11.list-manage.com/subscribe/post?u=9612e1a3261cb5689813bf38b&MSOURCE=&amp;id=0b23dfca54" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+          <div id="mc_embed_signup_scroll">
+
+          <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+          <input type="hidden" name="Source" id="mce-SOURCE" value="">
+          
+          <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_9612e1a3261cb5689813bf38b_0b23dfca54" tabindex="-1" value=""></div>
+          <div class="clear"><input type="submit" value="Get some" name="subscribe" id="mc-embedded-subscribe" class="button btn btn-xl"></div>
+          </div>
+          </form>
+        </div>
+        
+    </div>
+</section>
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <span class="copyright">Copyright &copy; Code Cookbook 2016</span>
+            </div>
+            <div class="col-md-12">
+                <a href="https://twitter.com/getcodecookbook"><i class="fa fa-twitter"></i></a>
+            </div>
+            
+        </div>
+    </div>
+</footer>
+<script src="/vendor/prism/prism.js" charset="utf-8"></script>
+<script src="/vendor/jquery/jquery.min.js"></script>
+<script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+<script src="/main.js" charset="utf-8"></script>
+
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-83852195-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+
+</body>
+
+</html>
