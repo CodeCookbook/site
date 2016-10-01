@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+      <title>Why I&#39;m a React Native Developer: a Response to Ariel Elkin</title>
+      <meta name="description" content="Ariel Elkin recently wrote an excellent article in which he explains why he thinks using react native is a bad idea. While several good points were made, I think that ultimately the argument he puts forth is lacking. In this article, I try to say where I think Ariel goes wrong in his arguments against react native.">
+      <link rel="canonical" href=" https://codecookbook.co/text/why-im-a-react-native-developer/"/>
+      <link rel="stylesheet" href="https://codecookbook.co/vendor/prism/prism-twilight.css" media="screen">
+    
+    <link href="https://codecookbook.co/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <link href="https://codecookbook.co/css/main.css" rel="stylesheet">
+
+    
+    
+    
+    <link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
+</head>
+  <body>
+    
+<nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <a href="/" class="navbar-brand">Code Cookbook</a>
+  </div>
+</nav>
+    <header class="intro text-center padding-top"
+      
+        style="color: black;">
+        <h1>Why I&#39;m a React Native Developer: a Response to Ariel Elkin</h1>
+        <h2>Ariel Elkin recently wrote an excellent article in which he explains why he thinks using react native is a bad idea. While several good points were made, I think that ultimately the argument he puts forth is lacking. In this article, I try to say where I think Ariel goes wrong in his arguments against react native.</h2>
+      
+
+    </header>
+    <article class="container">
+      <div class="col-md-offset-2 col-md-8">
+        
+
+<p>Most of my experience is in native Android and iOS mobile development. Although I&rsquo;ve typically been skeptical of cross-platform development tools for mobile, I think that react native is really neat. In fact, I&rsquo;m willing to bet that its the future of mobile development.</p>
+
+<p>I disagree with Ariel Elkin, who recently wrote <a href="https://arielelkin.github.io/articles/why-im-not-a-react-native-developer.html">an excellent article</a> in which he explains why he thinks using react native is a bad idea. While several good points were made, I think that ultimately the argument he puts forth is lacking. In this article, I try to say where I think Ariel goes wrong in his arguments against react native.</p>
+
+<h1 id="react-native-s-licensing-isn-t-scary:9e4a17eb27471af55cd3e5fd91ba46e7">React Native&rsquo;s licensing isn&rsquo;t Scary</h1>
+
+<p>In the section (cleverly) titled &ldquo;Patently Daunting,&rdquo; Ariel argues that by using React Native,</p>
+
+<blockquote>
+<p>&hellip;I’m jeopardising&hellip;both the platform my app depends on as well as my intellectual property.</p>
+</blockquote>
+
+<p>He then says that:</p>
+
+<blockquote>
+<p>iOS apps enter the App Store entirely at Apple’s discretion. I don’t want to multiply that uneasy feeling by two.</p>
+</blockquote>
+
+<p>There&rsquo;s <a href="https://news.ycombinator.com/item?id=12597488">a comment on HN</a> that pretty well addresses this concern:</p>
+
+<blockquote>
+<p>&hellip;if you&rsquo;re not using React you&rsquo;re probably already using open source software. And in the JS ecosystem that probably means you&rsquo;re using software under MIT, BSD and ISC licenses [licensed used by projects like jQuery, Angular, and Ember], which have no patent provisions whatsoever.</p>
+
+<p>In other words: unless you have an explicit patent grant, you&rsquo;re at risk of being sued by the owners of whatever patents you happen to be infringing upon. The only difference is that you&rsquo;re entirely reliant upon the goodwill of the patent owners while React explicitly shields you unless you sue Facebook over patents.</p>
+</blockquote>
+
+<p>Organizations that use any of these open source packages do so because they believe that the advantages of using these packages outweigh the risk of getting sued for patent infringement. This seems like a reasonable assessment in general and, as we&rsquo;ll see in the next sections, I think its a reasonable assessment for react native in particular.</p>
+
+<h1 id="its-not-javascript-its-just-good-business:9e4a17eb27471af55cd3e5fd91ba46e7">Its not Javascript, its just good business</h1>
+
+<p>After pointing out some of the legal concerns with using React Native, Ariel launches into a long list of Javascript&rsquo;s flaws. The list is meant to convey that &ldquo;switching to React Native from Swift is the technical regress: you have to adopt and use JavaScript, a language that’s technically defective, unsafe, and slowly evolving.&rdquo; Ariel then suggests that Flow isn&rsquo;t a solution to Javascript&rsquo;s problems because Flow doesn&rsquo;t ultimately address JavaScript&rsquo;s &ldquo;insecure foundations.&rdquo; I think neither of these arguments are particularly compelling. Here&rsquo;s why.</p>
+
+<h2 id="the-business-benefits-of-rn-probably-outweigh-javascript-s-defects:9e4a17eb27471af55cd3e5fd91ba46e7">The Business benefits of RN probably outweigh Javascript&rsquo;s defects</h2>
+
+<p>I don&rsquo;t like javascript. I think that many of the criticisms Ariel lodges against javascript are spot on. For better or worse, however, we have to think about javascript from the perspective of the people who are paying our salaries. If we think about javascript from their perspective, I think we&rsquo;ll see that the benefits of RN outweigh javascript&rsquo;s flaws.</p>
+
+<p>Mobile developers have been a special snowflake in many companies hiring and development processes. We have our own skills with our own tools and our own languages. This costs businesses a lot of money. The ability for businesses to say, &ldquo;Our web developers can now develop mobile applications&rdquo; is a huge win.<sup>1</sup></p>
+
+<p>Mobile developers have been writing almost exactly the same code for two different platforms for almost 8 years now. Businesses simply do not want to keep paying us to write the same code twice, especially now that the mobile app market is becoming saturated.<sup>2</sup></p>
+
+<p>This is what our employers are thinking:</p>
+
+<p>&ldquo;You mean I can share up to 85% percent of my code across both platforms<sup>3</sup> and I can have my web developers contribute to mobile apps and all I have to do is use an inferior programming language? Sign me up!&rdquo;</p>
+
+<p>The relevant question here isn&rsquo;t &ldquo;Is javascript inferior to Swift?&rdquo; Rather, the question is: &ldquo;Is Swift so much better than javascript that it will save me the money I could save from sharing 85% percent of my code across platforms and sharing my web team with my mobile team?&rdquo; The answer to this later, more relevant question is almost certainly &ldquo;no.&rdquo;</p>
+
+<h2 id="flow-isn-t-like-flossing:9e4a17eb27471af55cd3e5fd91ba46e7">Flow isn&rsquo;t like Flossing</h2>
+
+<p>Later on in the Javascript section, Ariel argues that Flow, Facebook&rsquo;s static type-checker, doesn&rsquo;t solve javascript&rsquo;s problems. Again, some of the points here are good, but ultimately, they are inadequate as an argument against React Native.</p>
+
+<p>The first argument against flow has something to do with it being built on &ldquo;weak foundations:&rdquo;</p>
+
+<blockquote>
+<p>Impressive as an engineering effort Flow may be, it remains a superset of JavaScript and thus forces you to build on inherently weak foundations&hellip;The fact that things can be built on unsafe foundations does not make the foundations any safer, nor does it make the process any more efficient.</p>
+</blockquote>
+
+<p>Everything Ariel says is correct in this passage. Javascript is a weak foundation, flow is built on a weak foundation, and flow doesn&rsquo;t make the &ldquo;the foundations any safer&rdquo;.</p>
+
+<p>Here&rsquo;s the thing: all programming languages are built on an unsafe, unproductive foundation: binary. This fact doesn&rsquo;t bother us because the abstractions and tools we&rsquo;ve built on top of binary and assembly are good enough to allow us to be very productive.</p>
+
+<p>We can say the same thing about javascript. If we build abstractions and tools that allow us to be productive, then the foundation doesn&rsquo;t matter. Regarding Ariel&rsquo;s claim that the tools built on top of javascript haven&rsquo;t actually made developers more effective, Facebook, Google, Microsoft, and many other companies using flow and typescript seem to disagree.</p>
+
+<p>There&rsquo;s a second argument that Ariel offers against the usefulness of flow that&rsquo;s pretty interesting:</p>
+
+<blockquote>
+<p>There is another fundamental problem with these palliative measures [like flow and linters]. Safeguards, like laws, are worth very little if they’re not actually enforced by the authorities and respected by the community. Flow doesn’t stop you from building and running React Native apps with code bound to generate runtime crashes. And that is a basic safety requirement for a programming language: if it’s a preventable error, the language should actively prevent it, it should stop me from writing and running unsafe code by default, not as an afterthought.</p>
+</blockquote>
+
+<p>A part of this seems right to me. All other things being equal, a language is better if by default it catches errors earlier on in the development cycle.</p>
+
+<p>I do, however, think that its wrong to suggest that the tools and languages that are built on top of js are worth little unless the entire community uses those tools. A single team can get a lot from enforcing the usage of these tools, and it doesn&rsquo;t take much work to fail your builds if your javascript is missing type annotations.</p>
+
+<p>Over time, I think more and more teams will see the value in these tools and we&rsquo;ll get the benefit of having our dependencies leveraging these javascript-enhancing tools.</p>
+
+<h1 id="for-better-or-worse-react-native-is-a-good-bet:9e4a17eb27471af55cd3e5fd91ba46e7">For better or worse, React Native is a good bet</h1>
+
+<p>None of this, by the way, is meant to suggest that building on top of javascript is <em>ideal</em>. If I had my way, I&rsquo;d prefer Ariel&rsquo;s solution: replace javascript. However, if we&rsquo;re trying to make good decisions about which tech to invest in as developers, we have to think about this issue from the perspective of the people who are paying our salaries and these people have <em>a lot</em> invested in javascript.</p>
+
+<p>I believe in react native so much, in fact, that I&rsquo;m betting my business on it. Code Cookbook is a company that helps teams start using react native for their business. Sign up for our email list below for updates and online tutorials on react native or email me at <strong>chefmatt[that symbol that comes between a handle and a domain]codecookbook.co</strong> so we can chat about how I can help.</p>
+
+<p>p.s. As you can tell from the obnoxious way I just published my email, I hate spam, so I won&rsquo;t be spamming your inbox either.</p>
+
+<h2 id="notes:9e4a17eb27471af55cd3e5fd91ba46e7">Notes:</h2>
+
+<ol>
+<li><p>I&rsquo;m not saying here that native mobile development expertise isn&rsquo;t (at this point) necessary for being an effective react native mobile developer.</p></li>
+
+<li><p>For evidence of the saturation of the app market, take a look at slides 11 and 12 of <a href="http://www.kpcb.com/internet-trends">this past year&rsquo;s internet trends report</a>.</p></li>
+
+<li><p><a href="http://makeitopen.com/tutorials/building-the-f8-app/planning/">Facebook was able to achieve 85% code reused for their conference app.</a></p></li>
+</ol>
+
+      </div>
+    </article>
+<section id="subscribe">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading"><a href="http://codecookbook.co">Code Cookbook</a></h2>
+                
+                <h3 class="section-subheading text-muted">React Native recipes delivered to your inbox</h3>
+                
+            </div>
+        </div>
+        
+        <div id="mc_embed_signup">
+          <form action="//universityandroid.us11.list-manage.com/subscribe/post?u=9612e1a3261cb5689813bf38b&MSOURCE=&amp;id=0b23dfca54" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+          <div id="mc_embed_signup_scroll">
+
+          <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+          <input type="hidden" name="Source" id="mce-SOURCE" value="">
+          
+          <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_9612e1a3261cb5689813bf38b_0b23dfca54" tabindex="-1" value=""></div>
+          <div class="clear"><input type="submit" value="Get some" name="subscribe" id="mc-embedded-subscribe" class="button btn btn-xl"></div>
+          </div>
+          </form>
+        </div>
+        
+    </div>
+</section>
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <span class="copyright">Copyright &copy; Code Cookbook 2016</span>
+            </div>
+            <div class="col-md-12">
+                <a href="https://twitter.com/getcodecookbook"><i class="fa fa-twitter"></i></a>
+            </div>
+            
+        </div>
+    </div>
+</footer>
+<script src="/vendor/prism/prism.js" charset="utf-8"></script>
+<script src="/vendor/jquery/jquery.min.js"></script>
+<script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+<script src="/main.js" charset="utf-8"></script>
+
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-83852195-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+
+</body>
+
+</html>

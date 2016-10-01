@@ -6,8 +6,110 @@
     <description>Recent content in Texts on Code Cookbook</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 20 Sep 2016 15:21:04 -0400</lastBuildDate>
+    <lastBuildDate>Sat, 01 Oct 2016 11:28:44 -0400</lastBuildDate>
     <atom:link href="https://codecookbook.co/text/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Why I&#39;m a React Native Developer: a Response to Ariel Elkin</title>
+      <link>https://codecookbook.co/text/why-im-a-react-native-developer/</link>
+      <pubDate>Sat, 01 Oct 2016 11:28:44 -0400</pubDate>
+      
+      <guid>https://codecookbook.co/text/why-im-a-react-native-developer/</guid>
+      <description>
+
+&lt;p&gt;Most of my experience is in native Android and iOS mobile development. Although I&amp;rsquo;ve typically been skeptical of cross-platform development tools for mobile, I think that react native is really neat. In fact, I&amp;rsquo;m willing to bet that its the future of mobile development.&lt;/p&gt;
+
+&lt;p&gt;I disagree with Ariel Elkin, who recently wrote &lt;a href=&#34;https://arielelkin.github.io/articles/why-im-not-a-react-native-developer.html&#34;&gt;an excellent article&lt;/a&gt; in which he explains why he thinks using react native is a bad idea. While several good points were made, I think that ultimately the argument he puts forth is lacking. In this article, I try to say where I think Ariel goes wrong in his arguments against react native.&lt;/p&gt;
+
+&lt;h1 id=&#34;react-native-s-licensing-isn-t-scary:9e4a17eb27471af55cd3e5fd91ba46e7&#34;&gt;React Native&amp;rsquo;s licensing isn&amp;rsquo;t Scary&lt;/h1&gt;
+
+&lt;p&gt;In the section (cleverly) titled &amp;ldquo;Patently Daunting,&amp;rdquo; Ariel argues that by using React Native,&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&amp;hellip;I’m jeopardising&amp;hellip;both the platform my app depends on as well as my intellectual property.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;He then says that:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;iOS apps enter the App Store entirely at Apple’s discretion. I don’t want to multiply that uneasy feeling by two.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;There&amp;rsquo;s &lt;a href=&#34;https://news.ycombinator.com/item?id=12597488&#34;&gt;a comment on HN&lt;/a&gt; that pretty well addresses this concern:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&amp;hellip;if you&amp;rsquo;re not using React you&amp;rsquo;re probably already using open source software. And in the JS ecosystem that probably means you&amp;rsquo;re using software under MIT, BSD and ISC licenses [licensed used by projects like jQuery, Angular, and Ember], which have no patent provisions whatsoever.&lt;/p&gt;
+
+&lt;p&gt;In other words: unless you have an explicit patent grant, you&amp;rsquo;re at risk of being sued by the owners of whatever patents you happen to be infringing upon. The only difference is that you&amp;rsquo;re entirely reliant upon the goodwill of the patent owners while React explicitly shields you unless you sue Facebook over patents.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Organizations that use any of these open source packages do so because they believe that the advantages of using these packages outweigh the risk of getting sued for patent infringement. This seems like a reasonable assessment in general and, as we&amp;rsquo;ll see in the next sections, I think its a reasonable assessment for react native in particular.&lt;/p&gt;
+
+&lt;h1 id=&#34;its-not-javascript-its-just-good-business:9e4a17eb27471af55cd3e5fd91ba46e7&#34;&gt;Its not Javascript, its just good business&lt;/h1&gt;
+
+&lt;p&gt;After pointing out some of the legal concerns with using React Native, Ariel launches into a long list of Javascript&amp;rsquo;s flaws. The list is meant to convey that &amp;ldquo;switching to React Native from Swift is the technical regress: you have to adopt and use JavaScript, a language that’s technically defective, unsafe, and slowly evolving.&amp;rdquo; Ariel then suggests that Flow isn&amp;rsquo;t a solution to Javascript&amp;rsquo;s problems because Flow doesn&amp;rsquo;t ultimately address JavaScript&amp;rsquo;s &amp;ldquo;insecure foundations.&amp;rdquo; I think neither of these arguments are particularly compelling. Here&amp;rsquo;s why.&lt;/p&gt;
+
+&lt;h2 id=&#34;the-business-benefits-of-rn-probably-outweigh-javascript-s-defects:9e4a17eb27471af55cd3e5fd91ba46e7&#34;&gt;The Business benefits of RN probably outweigh Javascript&amp;rsquo;s defects&lt;/h2&gt;
+
+&lt;p&gt;I don&amp;rsquo;t like javascript. I think that many of the criticisms Ariel lodges against javascript are spot on. For better or worse, however, we have to think about javascript from the perspective of the people who are paying our salaries. If we think about javascript from their perspective, I think we&amp;rsquo;ll see that the benefits of RN outweigh javascript&amp;rsquo;s flaws.&lt;/p&gt;
+
+&lt;p&gt;Mobile developers have been a special snowflake in many companies hiring and development processes. We have our own skills with our own tools and our own languages. This costs businesses a lot of money. The ability for businesses to say, &amp;ldquo;Our web developers can now develop mobile applications&amp;rdquo; is a huge win.&lt;sup&gt;1&lt;/sup&gt;&lt;/p&gt;
+
+&lt;p&gt;Mobile developers have been writing almost exactly the same code for two different platforms for almost 8 years now. Businesses simply do not want to keep paying us to write the same code twice, especially now that the mobile app market is becoming saturated.&lt;sup&gt;2&lt;/sup&gt;&lt;/p&gt;
+
+&lt;p&gt;This is what our employers are thinking:&lt;/p&gt;
+
+&lt;p&gt;&amp;ldquo;You mean I can share up to 85% percent of my code across both platforms&lt;sup&gt;3&lt;/sup&gt; and I can have my web developers contribute to mobile apps and all I have to do is use an inferior programming language? Sign me up!&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;The relevant question here isn&amp;rsquo;t &amp;ldquo;Is javascript inferior to Swift?&amp;rdquo; Rather, the question is: &amp;ldquo;Is Swift so much better than javascript that it will save me the money I could save from sharing 85% percent of my code across platforms and sharing my web team with my mobile team?&amp;rdquo; The answer to this later, more relevant question is almost certainly &amp;ldquo;no.&amp;rdquo;&lt;/p&gt;
+
+&lt;h2 id=&#34;flow-isn-t-like-flossing:9e4a17eb27471af55cd3e5fd91ba46e7&#34;&gt;Flow isn&amp;rsquo;t like Flossing&lt;/h2&gt;
+
+&lt;p&gt;Later on in the Javascript section, Ariel argues that Flow, Facebook&amp;rsquo;s static type-checker, doesn&amp;rsquo;t solve javascript&amp;rsquo;s problems. Again, some of the points here are good, but ultimately, they are inadequate as an argument against React Native.&lt;/p&gt;
+
+&lt;p&gt;The first argument against flow has something to do with it being built on &amp;ldquo;weak foundations:&amp;rdquo;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Impressive as an engineering effort Flow may be, it remains a superset of JavaScript and thus forces you to build on inherently weak foundations&amp;hellip;The fact that things can be built on unsafe foundations does not make the foundations any safer, nor does it make the process any more efficient.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Everything Ariel says is correct in this passage. Javascript is a weak foundation, flow is built on a weak foundation, and flow doesn&amp;rsquo;t make the &amp;ldquo;the foundations any safer&amp;rdquo;.&lt;/p&gt;
+
+&lt;p&gt;Here&amp;rsquo;s the thing: all programming languages are built on an unsafe, unproductive foundation: binary. This fact doesn&amp;rsquo;t bother us because the abstractions and tools we&amp;rsquo;ve built on top of binary and assembly are good enough to allow us to be very productive.&lt;/p&gt;
+
+&lt;p&gt;We can say the same thing about javascript. If we build abstractions and tools that allow us to be productive, then the foundation doesn&amp;rsquo;t matter. Regarding Ariel&amp;rsquo;s claim that the tools built on top of javascript haven&amp;rsquo;t actually made developers more effective, Facebook, Google, Microsoft, and many other companies using flow and typescript seem to disagree.&lt;/p&gt;
+
+&lt;p&gt;There&amp;rsquo;s a second argument that Ariel offers against the usefulness of flow that&amp;rsquo;s pretty interesting:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;There is another fundamental problem with these palliative measures [like flow and linters]. Safeguards, like laws, are worth very little if they’re not actually enforced by the authorities and respected by the community. Flow doesn’t stop you from building and running React Native apps with code bound to generate runtime crashes. And that is a basic safety requirement for a programming language: if it’s a preventable error, the language should actively prevent it, it should stop me from writing and running unsafe code by default, not as an afterthought.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;A part of this seems right to me. All other things being equal, a language is better if by default it catches errors earlier on in the development cycle.&lt;/p&gt;
+
+&lt;p&gt;I do, however, think that its wrong to suggest that the tools and languages that are built on top of js are worth little unless the entire community uses those tools. A single team can get a lot from enforcing the usage of these tools, and it doesn&amp;rsquo;t take much work to fail your builds if your javascript is missing type annotations.&lt;/p&gt;
+
+&lt;p&gt;Over time, I think more and more teams will see the value in these tools and we&amp;rsquo;ll get the benefit of having our dependencies leveraging these javascript-enhancing tools.&lt;/p&gt;
+
+&lt;h1 id=&#34;for-better-or-worse-react-native-is-a-good-bet:9e4a17eb27471af55cd3e5fd91ba46e7&#34;&gt;For better or worse, React Native is a good bet&lt;/h1&gt;
+
+&lt;p&gt;None of this, by the way, is meant to suggest that building on top of javascript is &lt;em&gt;ideal&lt;/em&gt;. If I had my way, I&amp;rsquo;d prefer Ariel&amp;rsquo;s solution: replace javascript. However, if we&amp;rsquo;re trying to make good decisions about which tech to invest in as developers, we have to think about this issue from the perspective of the people who are paying our salaries and these people have &lt;em&gt;a lot&lt;/em&gt; invested in javascript.&lt;/p&gt;
+
+&lt;p&gt;I believe in react native so much, in fact, that I&amp;rsquo;m betting my business on it. Code Cookbook is a company that helps teams start using react native for their business. Sign up for our email list below for updates and online tutorials on react native or email me at &lt;strong&gt;chefmatt[that symbol that comes between a handle and a domain]codecookbook.co&lt;/strong&gt; so we can chat about how I can help.&lt;/p&gt;
+
+&lt;p&gt;p.s. As you can tell from the obnoxious way I just published my email, I hate spam, so I won&amp;rsquo;t be spamming your inbox either.&lt;/p&gt;
+
+&lt;h2 id=&#34;notes:9e4a17eb27471af55cd3e5fd91ba46e7&#34;&gt;Notes:&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;I&amp;rsquo;m not saying here that native mobile development expertise isn&amp;rsquo;t (at this point) necessary for being an effective react native mobile developer.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;For evidence of the saturation of the app market, take a look at slides 11 and 12 of &lt;a href=&#34;http://www.kpcb.com/internet-trends&#34;&gt;this past year&amp;rsquo;s internet trends report&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://makeitopen.com/tutorials/building-the-f8-app/planning/&#34;&gt;Facebook was able to achieve 85% code reused for their conference app.&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
     
     <item>
       <title>Updates to rnpm for 0.34</title>
