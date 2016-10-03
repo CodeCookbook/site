@@ -4,7 +4,7 @@ draft = false
 title = "How to Share Text from your React Native App"
 description = "Sometimes you want your react native app to be able to share its own data with external applications like the email app or the Facebook app. This 8 minute recipe shows you how to do this."
 githublink =  "https://github.com/CodeCookbook/ShareText"
-videoid = "ACryo-rCrQk"
+videourl = "https://www.youtube.com/embed/ACryo-rCrQk?rel=0"
 +++
 
 ## Introduction
