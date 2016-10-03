@@ -6,8 +6,18 @@
     <description>Recent content in Posts on Code Cookbook</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 12 Sep 2016 01:04:07 -0400</lastBuildDate>
+    <lastBuildDate>Mon, 03 Oct 2016 17:52:24 -0400</lastBuildDate>
     <atom:link href="https://codecookbook.co/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Working on an Android Native Module in React Native pt. 1</title>
+      <link>https://codecookbook.co/post/zulip-android-react-native-module-recycler-view-sizing/</link>
+      <pubDate>Mon, 03 Oct 2016 17:52:24 -0400</pubDate>
+      
+      <guid>https://codecookbook.co/post/zulip-android-react-native-module-recycler-view-sizing/</guid>
+      <description>&lt;p&gt;The good stuff doesn&amp;rsquo;t really start until ~6 minutes in.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>How to Build a React Native Login Form with Redux Pt1</title>

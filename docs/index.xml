@@ -6,8 +6,18 @@
     <description>Recent content on Code Cookbook</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 01 Oct 2016 11:28:44 -0400</lastBuildDate>
+    <lastBuildDate>Mon, 03 Oct 2016 17:52:24 -0400</lastBuildDate>
     <atom:link href="https://codecookbook.co/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Working on an Android Native Module in React Native pt. 1</title>
+      <link>https://codecookbook.co/post/zulip-android-react-native-module-recycler-view-sizing/</link>
+      <pubDate>Mon, 03 Oct 2016 17:52:24 -0400</pubDate>
+      
+      <guid>https://codecookbook.co/post/zulip-android-react-native-module-recycler-view-sizing/</guid>
+      <description>&lt;p&gt;The good stuff doesn&amp;rsquo;t really start until ~6 minutes in.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Why I&#39;m a React Native Developer: a Response to Ariel Elkin</title>

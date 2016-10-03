@@ -3,8 +3,13 @@
   
   <url>
     <loc>https://codecookbook.co/</loc>
-    <lastmod>2016-10-01T11:28:44-04:00</lastmod>
+    <lastmod>2016-10-03T17:52:24-04:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://codecookbook.co/post/zulip-android-react-native-module-recycler-view-sizing/</loc>
+    <lastmod>2016-10-03T17:52:24-04:00</lastmod>
   </url>
   
   <url>
